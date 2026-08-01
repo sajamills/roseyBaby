@@ -10,7 +10,7 @@ Intended public domain: <https://roseybaby.com>
 
 ## Executive status
 
-The Next.js website is deployed and production builds successfully on Vercel with Next.js 16.2.12. The current Sanity schema is available through the embedded Studio at `/studio`. Core restaurant, menu, catering, crawfish, beer, story, event, blog, visit, and Starkville-guide experiences are present. Technical SEO foundations, structured data, weekly event syncing, Typeform paths, IndexNow support, responsive navigation, and optimized image delivery are implemented.
+The Next.js website is deployed and production builds successfully on Vercel with Next.js 16.2.12. The current Sanity schema is available through the embedded Studio at `/studio`. Core restaurant, menu, catering, crawfish, beer, story, event, blog, visit, and Starkville-guide experiences are present. Technical SEO foundations, structured data, weekly event syncing, Typeform paths, IndexNow support, responsive navigation, optimized image delivery, and a warm charcoal dark brand system are implemented.
 
 The largest remaining launch dependency is domain cutover. `roseybaby.com` still serves the previous website, so canonical metadata intentionally names a domain that does not yet serve this application. The requested Sanity webhook URL cannot work until the domain points to Vercel; it currently returns `406` rather than reaching the Next.js route.
 
@@ -21,7 +21,7 @@ Current handoff boundary: someone with Bluehost DNS access must replace the reco
 ## Verified deployment
 
 - Vercel project: `sajamills-projects/rosey`
-- Latest production deployment: `dpl_3CTSWybkVeMB264dLtKXGg3caXeQ`
+- Latest production deployment: `dpl_CRnTpcbBZbkcR24AoGnV6WXBcmQx`
 - Production alias: <https://rosey-woad.vercel.app>
 - Next.js: 16.2.12
 - React and React DOM: 19.2.8
@@ -156,9 +156,9 @@ Highest-value next actions:
 - No remaining plain HTML `<img>` tags or Rosey hero URLs in CSS were found in the audited application directories.
 - The supplied 128×90 logo remains suitable for favicon/header use but may appear soft on high-density displays. A larger original PNG is still preferred.
 
-## Dark-theme recommendation
+## Dark-theme status
 
-A warm dark theme is a strong brand direction, but it has not been applied to production. Create it first as a preview using charcoal rather than pure black, cream typography, Rosey red calls to action, muted brass accents, and lighter charcoal reading panels. Check menu legibility, accessibility contrast, daytime mobile use, food-photo color, and the risk of making the brand feel like a generic sports bar before promotion.
+The warm dark theme is implemented with charcoal rather than pure black, cream typography, Rosey red calls to action, muted brass accents, and lighter charcoal reading panels. Desktop and mobile preview checks confirmed the restaurant photography remains vibrant and the principal text, navigation, cards, and calls to action retain clear contrast. The browser theme color and color scheme are also set for dark-mode browser chrome.
 
 ## Launch checklist
 

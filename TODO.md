@@ -23,8 +23,6 @@
 - Add real ordering, ticket, organizer, address, image, and end-date data to events when available.
 
 ## Design and growth
-
-- Prototype the proposed warm charcoal dark theme in a Vercel preview before replacing the current light visual system.
 - Produce dedicated Open Graph images for the homepage, major service pages, articles, and guides.
 - Continue replacing weak or generic photography with approved Rosey Baby originals.
 - Register Google Search Console, Bing Webmaster Tools, GA4 conversions, Bing Places, Apple Business Connect, and other local profiles.
@@ -40,6 +38,7 @@
 
 ## Completed August 1, 2026
 
+- Replaced the white visual system with a warm charcoal dark brand theme, cream typography, Rosey red actions, brass accents, and dark reading panels.
 - Added `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, and `Permissions-Policy` headers.
 - Pinned the application and Vercel builds to Node.js 24 LTS.
 - Replaced obsolete starter tests with Rosey Baby configuration and production smoke tests.

@@ -2,11 +2,14 @@
 
 :root {
   --ink: #171817;
-  --cream: #f4efe5;
-  --paper: #fffaf1;
-  --red: #d93632;
-  --gold: #f0b642;
-  --green: #123b2b;
+  --cream: #0d100f;
+  --paper: #151817;
+  --red: #e44840;
+  --gold: #d2a046;
+  --green: #0d261d;
+  --light-text: #f4efe5;
+  --muted-text: #b9b3a9;
+  --subtle-border: #f4efe526;
 }
 * {
   box-sizing: border-box;
@@ -17,8 +20,13 @@ html {
 body {
   margin: 0;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--light-text);
   font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  color: #fff;
+  background: var(--red);
 }
 a {
   color: inherit;
@@ -1163,6 +1171,214 @@ footer .wordmark {
     padding: 80px 6vw;
   }
 }
+
+/* Warm dark brand system */
+.site-header,
+footer,
+.family-stores,
+.catering-capabilities,
+.tap-menu,
+.post-grid,
+.article-page,
+.event-list,
+.guide-events,
+.guide-grid,
+.placeholder-list > div,
+.beer-style-grid article {
+  color: var(--light-text);
+  background-color: var(--paper);
+}
+
+.hero-copy,
+.feature-section,
+.menu-groups,
+.catering-services,
+.detail-split,
+.story-origin,
+.beer-styles,
+.guide-body,
+.visit-copy {
+  color: var(--light-text);
+  background-color: var(--cream);
+}
+
+.site-header {
+  border-bottom-color: var(--subtle-border);
+  box-shadow: 0 10px 32px #0005;
+}
+
+.hero-intro,
+.feature-card > p:not(.eyebrow),
+.placeholder-list p,
+.menu-items p,
+.prose,
+.family-stores-intro > p:last-child,
+.family-store-grid p,
+.visit-copy > p:not(.eyebrow),
+.section-copy,
+.beer-styles > div:first-child > p:last-child,
+.tap-heading > p:last-child,
+.beer-style-grid p,
+.tap-section p,
+.post-card > p:not(.eyebrow),
+.event-list-heading > p:last-child,
+.event-row > div:nth-child(2) > p:not(.eyebrow),
+.event-row > div:nth-child(2) > span,
+.guide-grid p {
+  color: var(--muted-text);
+}
+
+.button {
+  border-color: #f4efe568;
+}
+
+.button:hover {
+  color: var(--ink);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.button-primary:hover {
+  color: white;
+  background: #bd302c;
+  border-color: #bd302c;
+}
+
+.feature-grid,
+.family-store-grid,
+.beer-style-grid,
+.inquiry-grid,
+.venue-cards {
+  border-color: var(--subtle-border);
+}
+
+.feature-card,
+.family-store-grid > a,
+.beer-style-grid article,
+.inquiry-grid a,
+.venue-cards a,
+.post-card,
+.guide-grid > a {
+  border-color: var(--subtle-border);
+}
+
+.feature-card:hover,
+.family-store-grid > a:hover,
+.post-card:hover,
+.guide-grid > a:hover {
+  color: var(--light-text);
+  background: #202421;
+}
+
+.menu-group,
+.menu-items article,
+.service-list > div,
+.tap-section article,
+.event-row,
+.event-row:last-child,
+.guide-events a,
+.guide-faq,
+.allergen-note {
+  border-color: var(--subtle-border);
+}
+
+.tap-section > h3 {
+  border-color: var(--light-text);
+}
+
+.event-featured {
+  background: #d2a04618;
+}
+
+.inquiry-paths,
+.beer-pairing,
+.article-page aside,
+.event-cta,
+.guide-answer,
+.guide-direct-answer,
+.guide-page aside,
+.post-card-featured {
+  color: var(--ink);
+}
+
+.post-card-featured > p:not(.eyebrow) {
+  color: #34362f;
+}
+
+.inquiry-grid a {
+  background: #17181712;
+}
+
+.inquiry-grid a:hover {
+  color: white;
+}
+
+.seasonal-tag {
+  color: var(--ink);
+}
+
+.mobile-menu summary span {
+  background: var(--light-text);
+}
+
+.mobile-menu nav {
+  color: var(--light-text);
+  background: var(--paper);
+  border-bottom-color: var(--red);
+  box-shadow: 0 18px 36px #000a;
+}
+
+.mobile-menu nav a {
+  border-color: var(--subtle-border);
+}
+
+.status-bar,
+.mobile-actions,
+.fact-grid,
+.menu-jump {
+  background: #080a09;
+}
+
+.wordmark,
+.desktop-nav,
+.mobile-menu,
+footer {
+  color: var(--light-text);
+}
+
+.article-body,
+.guide-body {
+  color: #ded8ce;
+}
+
+.article-body h2,
+.guide-body h2,
+.guide-body h3 {
+  color: var(--light-text);
+}
+
+.back-home,
+.card-link,
+.event-row > a,
+.guide-body a,
+.guide-grid strong,
+.post-card strong,
+.family-store-grid strong {
+  color: #f06a62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 @media (max-width: 520px) {
   .venue-cards {
     grid-template-columns: 1fr;
@@ -1770,4 +1986,56 @@ footer .wordmark {
   .guide-hero {
     padding-top: 90px;
   }
+}
+
+/* Dark-theme contrast overrides kept last so every page template inherits them. */
+.beer-styles > div:first-child > p:last-child,
+.tap-heading > p:last-child,
+.beer-style-grid p,
+.tap-section p,
+.post-card > p:not(.eyebrow),
+.event-list-heading > p:last-child,
+.event-row > div:nth-child(2) > p:not(.eyebrow),
+.event-row > div:nth-child(2) > span,
+.guide-grid p {
+  color: var(--muted-text);
+}
+
+.beer-style-grid,
+.beer-style-grid article,
+.post-card,
+.event-row,
+.event-row:last-child,
+.guide-events a,
+.guide-grid > a,
+.guide-faq,
+.tap-section article {
+  border-color: var(--subtle-border);
+}
+
+.tap-section > h3 {
+  border-color: var(--light-text);
+}
+
+.article-body,
+.guide-body {
+  color: #ded8ce;
+}
+
+.post-card-featured,
+.beer-pairing,
+.article-page aside,
+.event-cta,
+.guide-answer,
+.guide-direct-answer,
+.guide-page aside {
+  color: var(--ink);
+}
+
+.post-card-featured > p:not(.eyebrow) {
+  color: #34362f;
+}
+
+.event-featured {
+  background: #d2a04618;
 }
