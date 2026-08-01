@@ -1,0 +1,32 @@
+{
+  "title": "Rosey Baby Catering Inquiry",
+  "type": "form",
+  "settings": {"language":"en","is_public":true,"show_progress_bar":true,"show_question_number":true,"meta":{"title":"Rosey Baby Catering Inquiry","description":"Request full-service catering, staffed bar service, or an on-site crawfish boil from Rosey Baby in Starkville, Mississippi.","allow_indexing":false}},
+  "welcome_screens": [{"ref":"welcome","title":"Bring Rosey Baby to your event","properties":{"description":"Tell us what you are planning. Most events require at least one week of notice. Ashley Ray typically responds within 48 hours.","show_button":true,"button_text":"Start planning"}}],
+  "fields": [
+    {"ref":"event_type","title":"What type of event are you planning?","type":"multiple_choice","properties":{"choices":[{"label":"Wedding or rehearsal dinner"},{"label":"Bridal event"},{"label":"Mississippi State event"},{"label":"Sorority or fraternity event"},{"label":"Corporate event"},{"label":"Crawfish boil"},{"label":"Fish fry"},{"label":"Private party"},{"label":"Other"}]},"validations":{"required":true}},
+    {"ref":"event_date","title":"What is your event date?","type":"date","validations":{"required":true}},
+    {"ref":"service_time","title":"What time should service begin?","type":"short_text","validations":{"required":true}},
+    {"ref":"venue","title":"Where is your event being held?","type":"long_text","properties":{"description":"Include the venue name and full address."},"validations":{"required":true}},
+    {"ref":"venue_confirmed","title":"Is the venue confirmed?","type":"yes_no","validations":{"required":true}},
+    {"ref":"guest_count","title":"Approximately how many guests are expected?","type":"number","validations":{"required":true,"min_value":1}},
+    {"ref":"service_type","title":"Which catering service do you need?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Pickup"},{"label":"Delivery and setup"},{"label":"Staffed buffet"},{"label":"Full-service catering"},{"label":"Staffed bar"},{"label":"On-site crawfish boil"},{"label":"Not sure yet"}]},"validations":{"required":true}},
+    {"ref":"food_interest","title":"What food are you interested in serving?","type":"long_text","validations":{"required":true}},
+    {"ref":"crawfish_interest","title":"Are you interested in a crawfish boil?","type":"multiple_choice","properties":{"choices":[{"label":"Yes"},{"label":"No"},{"label":"Maybe"}]},"validations":{"required":true}},
+    {"ref":"crawfish_service","title":"If you are interested in crawfish, which service sounds best?","type":"multiple_choice","properties":{"choices":[{"label":"Platters"},{"label":"All you can eat"},{"label":"Not sure yet"},{"label":"Not applicable"}]}},
+    {"ref":"bar_service","title":"Do you need bartenders or alcohol service?","type":"multiple_choice","properties":{"choices":[{"label":"Yes"},{"label":"No"},{"label":"Maybe"}]},"validations":{"required":true}},
+    {"ref":"event_services","title":"Which rentals or event services do you need?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Tables and chairs"},{"label":"Linens"},{"label":"Serving pieces"},{"label":"Serving staff"},{"label":"Setup"},{"label":"Cleanup"},{"label":"Not sure yet"},{"label":"None"}]}},
+    {"ref":"dietary_needs","title":"Are there dietary restrictions or food allergies we should know about?","type":"long_text"},
+    {"ref":"budget","title":"What is your approximate catering budget?","type":"short_text"},
+    {"ref":"event_vision","title":"Tell us about the atmosphere or experience you want to create.","type":"long_text"},
+    {"ref":"venue_logistics","title":"Is there anything unusual about venue access, parking, power, water, or setup?","type":"long_text"},
+    {"ref":"full_name","title":"What is your full name?","type":"short_text","validations":{"required":true}},
+    {"ref":"email","title":"What is your email address?","type":"email","validations":{"required":true}},
+    {"ref":"phone","title":"What is your phone number?","type":"phone_number","validations":{"required":true}},
+    {"ref":"contact_method","title":"How would you prefer Ashley to contact you?","type":"multiple_choice","properties":{"choices":[{"label":"Phone call"},{"label":"Text message"},{"label":"Email"}]},"validations":{"required":true}},
+    {"ref":"contact_time","title":"What is the best time to reach you?","type":"short_text"},
+    {"ref":"referral_source","title":"How did you hear about Rosey Baby catering?","type":"multiple_choice","properties":{"choices":[{"label":"Rosey Baby restaurant"},{"label":"Friend or family"},{"label":"Venue recommendation"},{"label":"Google"},{"label":"Facebook"},{"label":"Instagram"},{"label":"Mississippi State"},{"label":"Other"}]}},
+    {"ref":"additional_notes","title":"Is there anything else we should know?","type":"long_text"}
+  ],
+  "thankyou_screens": [{"ref":"thanks","title":"Thanks for considering Rosey Baby.","properties":{"description":"Ashley Ray will review your event details and respond within 48 hours. Submitting this form does not reserve your date.","show_button":true,"button_text":"Visit Rosey Baby","button_mode":"redirect","redirect_url":"https://roseybaby.com/catering"}}]
+}

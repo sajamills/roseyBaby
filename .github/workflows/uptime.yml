@@ -1,0 +1,29 @@
+name: Production uptime
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-uptime
+  cancel-in-progress: true
+
+jobs:
+  check-production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check public website
+        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/ > /dev/null
+
+      - name: Check event sync health
+        run: |
+          response=$(curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/api/health)
+          node -e 'const health=JSON.parse(process.argv[1]); if(!health.healthy) { console.error(health); process.exit(1) }' "$response"
+
+      - name: Check sitemap
+        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/sitemap.xml | grep -q '<urlset'

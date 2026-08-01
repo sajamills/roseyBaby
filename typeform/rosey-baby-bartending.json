@@ -1,0 +1,27 @@
+{
+  "title": "Rosey Baby Bartending Inquiry",
+  "type": "form",
+  "settings": {"language":"en","is_public":true,"show_progress_bar":true,"show_question_number":true,"meta":{"title":"Rosey Baby Bartending Inquiry","description":"Request staffed bar and event bartending services from Rosey Baby in the Starkville area.","allow_indexing":false}},
+  "welcome_screens": [{"ref":"welcome","title":"Let Rosey Baby handle the bar","properties":{"description":"Tell us about your event, guests, and bar-service needs. Please allow at least one week of lead time. Ashley Ray typically responds within 48 hours.","show_button":true,"button_text":"Start planning"}}],
+  "fields": [
+    {"ref":"event_type","title":"What type of event are you planning?","type":"multiple_choice","properties":{"choices":[{"label":"Wedding or rehearsal dinner"},{"label":"Bridal event"},{"label":"Mississippi State event"},{"label":"Sorority or fraternity event"},{"label":"Corporate event"},{"label":"Fundraiser"},{"label":"Private party"},{"label":"Other"}]},"validations":{"required":true}},
+    {"ref":"event_date","title":"What is your event date?","type":"date","validations":{"required":true}},
+    {"ref":"bar_hours","title":"What hours should the bar be open?","type":"short_text","validations":{"required":true}},
+    {"ref":"venue","title":"Where is your event being held?","type":"long_text","properties":{"description":"Include the venue name and full address."},"validations":{"required":true}},
+    {"ref":"venue_confirmed","title":"Is the venue confirmed?","type":"yes_no","validations":{"required":true}},
+    {"ref":"guest_count","title":"Approximately how many guests are expected?","type":"number","validations":{"required":true,"min_value":1}},
+    {"ref":"bar_style","title":"What kind of bar service are you considering?","type":"multiple_choice","properties":{"choices":[{"label":"Beer and wine"},{"label":"Beer, wine, and signature cocktails"},{"label":"Full bar"},{"label":"Cash bar"},{"label":"Not sure yet"}]},"validations":{"required":true}},
+    {"ref":"alcohol_source","title":"Who will provide the alcohol?","type":"multiple_choice","properties":{"choices":[{"label":"Rosey Baby"},{"label":"The host"},{"label":"The venue"},{"label":"Not sure yet"}]},"validations":{"required":true}},
+    {"ref":"drink_vision","title":"Tell us about your preferred drinks, signature cocktails, beer, wine, or theme.","type":"long_text"},
+    {"ref":"bar_setup","title":"What bar equipment or setup is already available at the venue?","type":"long_text"},
+    {"ref":"additional_services","title":"Which additional services do you need?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Portable bar"},{"label":"Cups and barware"},{"label":"Ice"},{"label":"Mixers and garnishes"},{"label":"Tables and linens"},{"label":"Setup"},{"label":"Cleanup"},{"label":"Food catering"},{"label":"Not sure yet"}]}},
+    {"ref":"venue_rules","title":"Are there venue alcohol rules, insurance requirements, or service restrictions we should know about?","type":"long_text"},
+    {"ref":"budget","title":"What is your approximate bar-service budget?","type":"short_text"},
+    {"ref":"full_name","title":"What is your full name?","type":"short_text","validations":{"required":true}},
+    {"ref":"email","title":"What is your email address?","type":"email","validations":{"required":true}},
+    {"ref":"phone","title":"What is your phone number?","type":"phone_number","validations":{"required":true}},
+    {"ref":"contact_method","title":"How should Ashley contact you?","type":"multiple_choice","properties":{"choices":[{"label":"Phone call"},{"label":"Text message"},{"label":"Email"}]},"validations":{"required":true}},
+    {"ref":"additional_notes","title":"Is there anything else we should know?","type":"long_text"}
+  ],
+  "thankyou_screens": [{"ref":"thanks","title":"We’ll raise a glass to that.","properties":{"description":"Ashley Ray will review your details and respond within 48 hours. Submitting this form does not reserve your date.","show_button":true,"button_text":"Visit Rosey Baby","button_mode":"redirect","redirect_url":"https://roseybaby.com/catering"}}]
+}

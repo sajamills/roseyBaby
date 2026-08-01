@@ -1,0 +1,27 @@
+{
+  "title": "Rosey Baby Crawfish Boil Inquiry",
+  "type": "form",
+  "settings": {"language":"en","is_public":true,"show_progress_bar":true,"show_question_number":true,"meta":{"title":"Rosey Baby Crawfish Boil Inquiry","description":"Plan an on-site Louisiana crawfish boil with Rosey Baby in the Starkville area.","allow_indexing":false}},
+  "welcome_screens": [{"ref":"welcome","title":"Let’s plan your crawfish boil","properties":{"description":"Tell us about your crowd, location, and event. Please allow at least one week of lead time. Ashley Ray typically responds within 48 hours.","show_button":true,"button_text":"Start planning"}}],
+  "fields": [
+    {"ref":"event_type","title":"What kind of event is the crawfish boil for?","type":"multiple_choice","properties":{"choices":[{"label":"Wedding or rehearsal event"},{"label":"Mississippi State event"},{"label":"Sorority or fraternity event"},{"label":"Corporate event"},{"label":"Fundraiser"},{"label":"Birthday or private party"},{"label":"Other"}]},"validations":{"required":true}},
+    {"ref":"event_date","title":"What is your event date?","type":"date","validations":{"required":true}},
+    {"ref":"service_time","title":"What time should the boil be ready to serve?","type":"short_text","validations":{"required":true}},
+    {"ref":"venue","title":"Where will the boil take place?","type":"long_text","properties":{"description":"Include the venue name and full address."},"validations":{"required":true}},
+    {"ref":"venue_confirmed","title":"Is the location confirmed?","type":"yes_no","validations":{"required":true}},
+    {"ref":"guest_count","title":"How many people are you expecting?","type":"number","validations":{"required":true,"min_value":1}},
+    {"ref":"service_style","title":"Which crawfish service do you prefer?","type":"multiple_choice","properties":{"choices":[{"label":"All you can eat"},{"label":"Individual platters"},{"label":"Not sure yet"}]},"validations":{"required":true}},
+    {"ref":"sides","title":"Which sides should be included?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Corn"},{"label":"Sausage"},{"label":"Potatoes"},{"label":"All three"},{"label":"Discuss other options"}]},"validations":{"required":true}},
+    {"ref":"other_food","title":"Would you like any food in addition to crawfish?","type":"long_text"},
+    {"ref":"event_services","title":"Which additional services do you need?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Delivery"},{"label":"On-site cooking"},{"label":"Serving staff"},{"label":"Tables and chairs"},{"label":"Linens"},{"label":"Setup"},{"label":"Cleanup"},{"label":"Staffed bar"},{"label":"Not sure yet"},{"label":"None"}]}},
+    {"ref":"site_needs","title":"Tell us about parking, setup access, water, power, or other site details.","type":"long_text"},
+    {"ref":"dietary_needs","title":"Are there allergies or dietary needs we should know about?","type":"long_text"},
+    {"ref":"budget","title":"What is your approximate budget?","type":"short_text"},
+    {"ref":"full_name","title":"What is your full name?","type":"short_text","validations":{"required":true}},
+    {"ref":"email","title":"What is your email address?","type":"email","validations":{"required":true}},
+    {"ref":"phone","title":"What is your phone number?","type":"phone_number","validations":{"required":true}},
+    {"ref":"contact_method","title":"How should Ashley contact you?","type":"multiple_choice","properties":{"choices":[{"label":"Phone call"},{"label":"Text message"},{"label":"Email"}]},"validations":{"required":true}},
+    {"ref":"additional_notes","title":"Is there anything else we should know?","type":"long_text"}
+  ],
+  "thankyou_screens": [{"ref":"thanks","title":"Your boil starts here.","properties":{"description":"Ashley Ray will review your details and respond within 48 hours. Submitting this form does not reserve your date.","show_button":true,"button_text":"Visit Rosey Baby","button_mode":"redirect","redirect_url":"https://roseybaby.com/crawfish"}}]
+}
