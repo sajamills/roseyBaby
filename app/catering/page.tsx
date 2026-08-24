@@ -49,7 +49,7 @@ export default function CateringPage() {
     },
   ];
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="catering-hero">
         <HeroImage src="/rosey-originals/header.jpg" alt="Rosey Baby full-service catering" priority />

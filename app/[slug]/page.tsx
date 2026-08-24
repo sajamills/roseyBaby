@@ -20,7 +20,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
   const page = pages[slug];
   if (!page) notFound();
   return (
-    <main className="inner-page">
+    <main id="main-content" className="inner-page">
       <SiteHeader />
       <section className="page-hero">
         <p className="eyebrow">{page.eyebrow}</p>

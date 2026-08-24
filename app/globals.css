@@ -43,6 +43,30 @@ a {
   position: relative;
   z-index: 30;
 }
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.skip-link:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  padding: 14px 20px;
+  background: var(--red);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  z-index: 100;
+}
 .wordmark {
   font-family: var(--font-display), serif;
   font-size: 28px;
@@ -374,6 +398,17 @@ footer .wordmark {
   display: flex;
   align-items: center;
   border-bottom: 1px solid currentColor;
+}
+.footer-legal {
+  grid-column: 1 / -1;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #17181725;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
 }
 .mobile-actions {
   display: none;
@@ -1327,7 +1362,8 @@ footer,
 .event-row:last-child,
 .guide-events a,
 .guide-faq,
-.allergen-note {
+.allergen-note,
+.footer-legal {
   border-color: var(--subtle-border);
 }
 

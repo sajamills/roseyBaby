@@ -14,12 +14,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/menu", frequency: "weekly", priority: 0.95 },
     { path: "/crawfish", frequency: "weekly", priority: 0.9 },
     { path: "/catering", frequency: "monthly", priority: 0.9 },
+    { path: "/plan-event", frequency: "monthly", priority: 0.7 },
     { path: "/events", frequency: "weekly", priority: 0.85 },
     { path: "/beer-wall", frequency: "weekly", priority: 0.8 },
     { path: "/visit", frequency: "monthly", priority: 0.8 },
     { path: "/our-story", frequency: "monthly", priority: 0.7 },
     { path: "/blog", frequency: "weekly", priority: 0.75 },
     { path: "/starkville", frequency: "weekly", priority: 0.9 },
+    { path: "/privacy", frequency: "monthly", priority: 0.3 },
+    { path: "/accessibility", frequency: "monthly", priority: 0.3 },
   ];
 
   return [

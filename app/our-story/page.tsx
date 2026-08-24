@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function StoryPage() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="detail-hero story-detail-hero">
         <HeroImage src="/rosey-originals/deck.jpg" alt="Rosey Baby on the railroad tracks" priority />

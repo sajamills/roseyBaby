@@ -14,7 +14,7 @@ export default function PlanEventPage() {
   const bartendingFormUrl = process.env.NEXT_PUBLIC_BARTENDING_TYPEFORM_URL;
 
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="page-hero">
         <p className="eyebrow">Let&rsquo;s plan it</p>

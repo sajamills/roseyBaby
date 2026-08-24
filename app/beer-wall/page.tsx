@@ -42,7 +42,7 @@ const styles = [
 export default async function BeerWallPage() {
   const sections = await getBeerMenu();
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="beer-hero">
         <HeroImage src="/rosey-originals/drink.jpg" alt="A drink at Rosey Baby’s beer wall" priority />

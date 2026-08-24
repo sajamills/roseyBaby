@@ -36,7 +36,7 @@ export default async function StarkvillePage() {
     })),
   };
   return (
-    <main>
+    <main id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}

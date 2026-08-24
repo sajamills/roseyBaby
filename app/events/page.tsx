@@ -61,7 +61,7 @@ export default async function EventsPage() {
       })),
   };
   return (
-    <main>
+    <main id="main-content">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}

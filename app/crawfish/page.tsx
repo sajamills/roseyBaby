@@ -14,7 +14,7 @@ export default function CrawfishPage() {
   const crawfishFormUrl =
     process.env.NEXT_PUBLIC_CRAWFISH_TYPEFORM_URL || "/catering";
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="detail-hero crawfish-detail-hero">
         <HeroImage src="/rosey-originals/oysters.jpg" alt="Fresh Louisiana seafood at Rosey Baby" priority />
@@ -54,9 +54,9 @@ export default function CrawfishPage() {
             farm.
           </p>
           <p>
-            Prices follow the catch and are listed at market price. Availability
-            can change quickly, so check Facebook or call before making a
-            crawfish-only trip.
+            Prices follow the catch and are listed at market price. Season and
+            availability vary based on weather and supply, so check Facebook
+            or call before making a crawfish-only trip.
           </p>
         </div>
       </section>

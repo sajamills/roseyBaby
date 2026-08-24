@@ -39,7 +39,7 @@ const features = [
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
 
       <section className="hero">
@@ -53,8 +53,8 @@ export default function Home() {
             <em>Right on the tracks.</em>
           </h1>
           <p className="hero-intro">
-            Elevated Cajun roots, live Louisiana crawfish, and a tap wall built
-            for Starkville. Come hungry. Bring the whole crew.
+            Elevated Cajun roots, seasonal live Louisiana crawfish, and a tap
+            wall built for Starkville. Come hungry. Bring the whole crew.
           </p>
           <div className="action-row">
             {actions.map((action, index) => (
@@ -71,7 +71,7 @@ export default function Home() {
         <div className="hero-art">
           <HeroImage
             src="/rosey-originals/header.jpg"
-            alt="A dish served at Rosey Baby in Starkville"
+            alt="Boiled shrimp, corn, and potatoes with a branded Rosey Baby cup"
             priority
           />
           <div className="track-lines" />

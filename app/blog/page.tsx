@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts = await getPosts();
   return (
-    <main>
+    <main id="main-content">
       <SiteHeader />
       <section className="editorial-hero">
         <HeroImage src="/rosey-originals/entrees.jpg" alt="A Rosey Baby entrée" priority />
