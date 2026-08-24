@@ -16,17 +16,8 @@ export async function getMenu(): Promise<MenuRecord[]> {
   try {
     const menu = await client.fetch<(MenuRecord & { _id: string })[]>(`*[_type == "menuItem" && available != false] | order(category->order asc, name asc) { _id, name, description, seasonal, available, "category": category->name }`);
     const deduped = Array.from(new Map(menu.map(item => [item._id, item])).values());
-    const dashVersions = menu.filter(i => i._id.startsWith("menu-item-"));
-    const dotVersions = menu.filter(i => i._id.startsWith("menuItem."));
-    const mismatches = dashVersions.filter(d => {
-      const dot = dotVersions.find(x => x.name === d.name);
-      return !dot || dot.description !== d.description || dot.category !== d.category || Boolean(dot.seasonal) !== Boolean(d.seasonal);
-    });
-    console.log(`[getMenu diag] dash=${dashVersions.length} dot=${dotVersions.length} contentMismatches=${mismatches.length}`);
-    if (mismatches.length) console.log(`[getMenu diag] mismatchNames=${JSON.stringify(mismatches.map(m => m.name))}`);
     return deduped.length ? deduped : fallbackMenu;
-  } catch (err) {
-    console.log(`[getMenu diag] CAUGHT ERROR, using fallback: ${err instanceof Error ? err.message : String(err)}`);
+  } catch {
     return fallbackMenu;
   }
 }

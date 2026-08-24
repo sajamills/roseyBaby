@@ -5,7 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { getMenu } from "@/lib/menu";
 import { safeJsonLd, siteUrl } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 export const metadata: Metadata = { title: "Menu", description: "Explore Rosey Baby’s Cajun specialties, seafood, po-boys, wings, cocktails, and desserts in Starkville, Mississippi.", alternates: { canonical: "/menu" } };
 
 const galleryPhotos = [
