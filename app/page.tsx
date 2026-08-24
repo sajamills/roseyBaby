@@ -16,7 +16,7 @@ const actions = [
 const features = [
   {
     eyebrow: "January–June",
-    title: "Crawfish season",
+    title: "Louisiana crawfish season",
     body: "Live Louisiana crawfish, boils, and seasonal updates from the tracks.",
     href: "/crawfish",
     image: "/rosey-originals/oysters.jpg",
@@ -129,7 +129,9 @@ export default function Home() {
           Curt Crissey came to Starkville from Homestead, Florida, in 1980 to
           play college football. A connection with Louisiana crawfish farmers
           eventually brought live crawfish to Starkville—and a family restaurant
-          was born.
+          was born. Today, Curt’s daughter Ashley Ray and son-in-law Justin Ray
+          carry that Cajun cooking forward, still leaning on his original
+          recipes alongside a full bar and a rotating beer wall.
         </p>
         <Link className="text-link" href="/our-story">
           Read our story →

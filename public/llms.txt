@@ -1,0 +1,18 @@
+# Rosey Baby
+
+> Family-owned Cajun restaurant in Starkville, Mississippi, serving live Louisiana crawfish, elevated Southern favorites, and a rotating wall of craft beer since 1995. Located at 300 S Jackson St, Starkville, MS 39759, on the railroad tracks near downtown.
+
+Rosey Baby is open daily, 11 AM–10 PM. Phone: 662-324-1949.
+
+## Core pages
+
+- [Menu](https://www.roseybaby.com/menu): Cajun specialties, seafood, po-boys, wings, cocktails, and desserts.
+- [Crawfish](https://www.roseybaby.com/crawfish): Live Louisiana crawfish season (January–June), platters, all-you-can-eat, and private crawfish boils.
+- [Beer wall](https://www.roseybaby.com/beer-wall): A rotating lineup of local beer, IPAs, sours, and stouts on tap.
+- [Catering](https://www.roseybaby.com/catering): Full-service catering for weddings, MSU events, Greek life, fish fries, and private parties.
+- [Plan your event](https://www.roseybaby.com/plan-event): Start a catering, crawfish boil, or bartending inquiry.
+- [Our story](https://www.roseybaby.com/our-story): The history of Rosey Baby and founder Curt Crissey.
+- [Events](https://www.roseybaby.com/events): Upcoming Starkville and Mississippi State events near Rosey Baby.
+- [Starkville guides](https://www.roseybaby.com/starkville): Local guides to eating, drinking, and gathering in Starkville.
+- [Blog](https://www.roseybaby.com/blog): Articles on crawfish boils, seasoning, and game-day guides.
+- [Visit](https://www.roseybaby.com/visit): Location, hours, and directions.
