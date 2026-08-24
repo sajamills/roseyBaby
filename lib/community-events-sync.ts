@@ -126,6 +126,9 @@ export async function syncStarkvilleMainStreetEvents() {
         title,
         slug: { _type: "slug", current: `${slugify(title)}-${event.id}` },
         eventType: "Starkville event",
+        categories: (event.categories || [])
+          .map((category) => category.slug)
+          .filter((slug): slug is string => Boolean(slug)),
         startsAt: asUtc(event.utc_start_date),
         ...(event.utc_end_date ? { endsAt: asUtc(event.utc_end_date) } : {}),
         location,

@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import { getEvents } from "@/lib/editorial";
 import { safeJsonLd, siteUrl } from "@/lib/seo";
 import HeroImage from "@/components/HeroImage";
+import EventsFilter from "@/components/EventsFilter";
 
 export const metadata: Metadata = {
   title: "Starkville & MSU Events Calendar",
@@ -95,52 +96,7 @@ export default async function EventsPage() {
             the organizer has not announced the current year’s date yet.
           </p>
         </div>
-        {events.map((event, index) => {
-          const d = event.startsAt ? new Date(event.startsAt) : null;
-          return (
-            <article
-              className={
-                event.featured ? "event-row event-featured" : "event-row"
-              }
-              key={`${event.title}-${index}`}
-            >
-              <div className="event-date">
-                {d ? (
-                  <>
-                    <strong>
-                      {new Intl.DateTimeFormat("en-US", {
-                        month: "short",
-                        timeZone: "America/Chicago",
-                      }).format(d)}
-                    </strong>
-                    <span>
-                      {new Intl.DateTimeFormat("en-US", {
-                        day: "2-digit",
-                        timeZone: "America/Chicago",
-                      }).format(d)}
-                    </span>
-                  </>
-                ) : (
-                  <small>
-                    Date
-                    <br />
-                    pending
-                  </small>
-                )}
-              </div>
-              <div>
-                <p className="eyebrow">{event.eventType}</p>
-                <h3>{event.title}</h3>
-                <p>{event.description}</p>
-                <span>
-                  {event.location}
-                  {event.dateLabel ? ` · ${event.dateLabel}` : ""}
-                </span>
-              </div>
-              <Link href={`/events/${event.slug}`}>Event guide →</Link>
-            </article>
-          );
-        })}
+        <EventsFilter events={events} />
       </section>
       <section className="event-cta">
         <div>

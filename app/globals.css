@@ -1267,6 +1267,20 @@ footer,
   background: #f4efe512;
 }
 
+.event-filters button:not(.event-filter-active) {
+  border-color: #f4efe599;
+  color: var(--light-text);
+  background: #f4efe512;
+}
+.event-filters button:hover:not(.event-filter-active) {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--ink);
+}
+.event-filter-empty {
+  color: var(--muted-text);
+}
+
 .button:hover {
   color: var(--ink);
   background: var(--gold);
@@ -1728,6 +1742,31 @@ footer {
   max-width: 700px;
   color: #666;
   line-height: 1.7;
+}
+.event-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.event-filters button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+.event-filter-active {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+.event-filter-empty {
+  padding: 40px 0;
 }
 .event-row {
   display: grid;

@@ -94,6 +94,16 @@ export const event = defineType({
       initialValue: true,
     }),
     defineField({
+      name: "categories",
+      title: "Source categories",
+      description:
+        "Category slugs from the originating event feed (e.g. theater-and-arts, live-music, downtown), used to power site filters.",
+      type: "array",
+      of: [{ type: "string" }],
+      readOnly: true,
+      hidden: ({ document }) => !document?.categories,
+    }),
+    defineField({
       name: "sourceProvider",
       title: "Automatic source",
       type: "string",

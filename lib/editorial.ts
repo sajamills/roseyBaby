@@ -36,6 +36,7 @@ export type CalendarEvent = {
   featured?: boolean;
   imageUrl?: string;
   sourceImageUrl?: string;
+  categories?: string[];
 };
 
 const postFallbackImages: Record<string, string> = {
@@ -624,7 +625,7 @@ const eventSlug = (event: CalendarEvent) =>
 export async function getEvents(): Promise<CalendarEvent[]> {
   try {
     const rows = await sanityClient.fetch<CalendarEvent[]>(
-      `*[_type=="event" && (!defined(startsAt) || startsAt >= now())]|order(startsAt asc)[0...150]{title,"slug":slug.current,eventType,startsAt,endsAt,dateLabel,location,streetAddress,city,region,postalCode,organizer,organizerUrl,description,sourceUrl,ticketUrl,isHome,featured,sourceImageUrl,"imageUrl":image.asset->url}`,
+      `*[_type=="event" && (!defined(startsAt) || startsAt >= now())]|order(startsAt asc)[0...150]{title,"slug":slug.current,eventType,startsAt,endsAt,dateLabel,location,streetAddress,city,region,postalCode,organizer,organizerUrl,description,sourceUrl,ticketUrl,isHome,featured,sourceImageUrl,categories,"imageUrl":image.asset->url}`,
     );
     return (rows.length ? rows : fallbackEvents).map((event) => ({
       ...event,
