@@ -47,7 +47,7 @@ export async function bootstrapSanityContent() {
     _id: `blog-post-${post.slug}`, _type: "blogPost", ...post,
     slug: { _type: "slug", current: post.slug }, featured: post.slug === "how-to-host-crawfish-boil-starkville",
   }));
-  fallbackEvents.forEach((event, order) => tx.createIfNotExists({
+  fallbackEvents.filter(event => event.eventType !== "Football").forEach((event, order) => tx.createIfNotExists({
     _id: `editorial-event-${slugify(event.title)}`, _type: "event", ...event,
     slug: { _type: "slug", current: `${slugify(event.title)}-${order + 1}` }, city: "Starkville", region: "MS",
     organizer: event.eventType === "Starkville event" ? "Starkville Main Street" : "Mississippi State University",
