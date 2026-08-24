@@ -9,7 +9,7 @@ const sans = DM_Sans({ variable: "--font-sans", subsets: ["latin"] });
 const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://roseybaby.com"),
+  metadataBase: new URL("https://www.roseybaby.com"),
   title: {
     default: "Rosey Baby | Cajun Restaurant & Crawfish in Starkville, MS",
     template: "%s | Rosey Baby",

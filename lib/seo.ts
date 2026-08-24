@@ -1,4 +1,4 @@
-export const siteUrl = "https://roseybaby.com";
+export const siteUrl = "https://www.roseybaby.com";
 
 export function safeJsonLd(value: unknown) {
   return JSON.stringify(value).replace(/</g, "\\u003c");
