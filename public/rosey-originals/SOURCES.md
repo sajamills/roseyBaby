@@ -14,10 +14,15 @@ edge / JPEG quality 60 for web delivery.
 - `drink.jpg`: panoramic beer tap wall — `PXL_20220810_214557362.jpg`
 - `drinks.jpg`: row of colorful daiquiris — `PXL_20220908_210302603~3.jpg`
 
-`deck.jpg` was NOT replaced — it's used site-wide for exterior/ambiance context
-(Starkville guide, Our Story hero, events, catering), and the 2026 photo batch
+`deck.jpg` was NOT replaced for most pages — it's used for exterior/ambiance
+context (Starkville guide, Our Story hero, events), and the 2026 photo batch
 contained no exterior/deck/railroad-tracks shots. Still needs a real photo; see
-`TODO.md`.
+`TODO.md`. It WAS replaced on the catering page specifically (see below).
+
+## Added 2026-08-24 (later same day)
+
+- `catering.jpg`: Rosey Baby's owner staffing a private outdoor event bar, used with permission — `original_97873b77-c770-43db-a986-465d1717ba2c_PXL_20211205_190522111.PORTRAIT.jpg`. Used on the catering page in place of `deck.jpg`.
+- `gallery/`: a 10-photo food + drink strip added to the menu page (`/menu`), covering dishes and drinks not otherwise used elsewhere on the site — étouffée, char-broiled oysters, hurricane cocktail, cheeseburger, beer tap wall, seafood pasta, daiquiris, mac and cheese, shrimp tacos, and the bar.
 
 ## Original (2026-07-31)
 

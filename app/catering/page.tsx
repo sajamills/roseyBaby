@@ -98,7 +98,7 @@ export default function CateringPage() {
         </div>
       </section>
       <section className="venue-showcase">
-        <HeroImage src="/rosey-originals/deck.jpg" alt="A Starkville event setting" />
+        <HeroImage src="/rosey-originals/catering.jpg" alt="Rosey Baby's owner staffing a private event bar" />
         <div className="venue-intro">
           <p className="eyebrow">Your place. Our full service.</p>
           <h2>We know how to feed Starkville’s biggest moments.</h2>

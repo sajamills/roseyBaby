@@ -281,6 +281,7 @@ h1 em {
   margin: 0 -17px 28px;
   position: relative;
   overflow: hidden;
+  background: var(--green);
 }
 .card-photo img {
   object-fit: cover;
@@ -590,6 +591,31 @@ footer .wordmark {
 }
 .menu-hero {
   background: var(--red);
+}
+.menu-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: var(--subtle-border);
+}
+.menu-gallery > div {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--green);
+}
+.menu-gallery img {
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .menu-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .menu-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .menu-jump {
   display: flex;
@@ -1229,7 +1255,10 @@ footer,
 }
 
 .button {
-  border-color: #f4efe568;
+  border-color: #f4efe599;
+}
+.button:not(.button-primary) {
+  background: #f4efe512;
 }
 
 .button:hover {
