@@ -64,18 +64,12 @@ export default function CateringPage() {
             From weddings at Dodson Farms and bridal weekends to MSU events,
             crawfish boils, fish fries, and Greek life parties.
           </p>
-          {typeformUrl ? (
-            <a
-              className="button button-primary catering-cta"
-              href={typeformUrl}
-            >
-              Fill out our catering form →
-            </a>
-          ) : (
-            <span className="button catering-cta pending-cta">
-              Typeform URL needed
-            </span>
-          )}
+          <a
+            className="button button-primary catering-cta"
+            href="/plan-event"
+          >
+            Start your inquiry →
+          </a>
         </div>
       </section>
       <section className="catering-services">
@@ -187,13 +181,9 @@ export default function CateringPage() {
       <section className="catering-final" id="start-planning">
         <p className="eyebrow">Start planning</p>
         <h2>Ready to bring Rosey Baby to your event?</h2>
-        {typeformUrl ? (
-          <a className="button" href={typeformUrl}>
-            Complete the Typeform →
-          </a>
-        ) : (
-          <p>The catering inquiry form is being connected now.</p>
-        )}
+        <a className="button" href="/plan-event">
+          Start your inquiry →
+        </a>
       </section>
     </main>
   );
