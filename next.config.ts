@@ -12,7 +12,15 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    return [{ source: "/(.*)", headers: securityHeaders }];
+    const studioHeaders = securityHeaders.filter(
+      (header) => header.key !== "X-Frame-Options",
+    );
+
+    return [
+      { source: "/studio", headers: studioHeaders },
+      { source: "/studio/:path*", headers: studioHeaders },
+      { source: "/((?!studio).*)", headers: securityHeaders },
+    ];
   },
 };
 

@@ -10,7 +10,7 @@ const actions = [
     href: "https://www.opentable.com/r/rosey-baby-starkville",
   },
   { label: "Plan catering", href: "/catering" },
-  { label: "Order online", href: "/order" },
+  { label: "Call to order", href: "tel:+16623241949" },
 ];
 
 const features = [

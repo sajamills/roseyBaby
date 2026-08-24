@@ -35,8 +35,8 @@ export default function CrawfishPage() {
             >
               Reserve a table
             </Link>
-            <Link className="button detail-light-button" href="/order">
-              Order online
+            <Link className="button detail-light-button" href="tel:+16623241949">
+              Call to order
             </Link>
           </div>
         </div>
