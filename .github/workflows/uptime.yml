@@ -18,12 +18,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Check public website
-        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/ > /dev/null
+        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://www.roseybaby.com/ > /dev/null
 
       - name: Check event sync health
         run: |
-          response=$(curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/api/health)
+          response=$(curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://www.roseybaby.com/api/health)
           node -e 'const health=JSON.parse(process.argv[1]); if(!health.healthy) { console.error(health); process.exit(1) }' "$response"
 
       - name: Check sitemap
-        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://rosey-woad.vercel.app/sitemap.xml | grep -q '<urlset'
+        run: curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 https://www.roseybaby.com/sitemap.xml | grep -q '<urlset'
