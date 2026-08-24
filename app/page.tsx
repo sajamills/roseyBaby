@@ -33,7 +33,7 @@ const features = [
     title: "Catering for every crowd",
     body: "Weddings, MSU events, crawfish boils, fish fries, and private parties.",
     href: "/catering",
-    image: "/rosey-originals/header.jpg",
+    image: "/rosey-originals/catering.jpg",
   },
 ];
 
@@ -111,7 +111,6 @@ export default function Home() {
                   sizes="(max-width: 900px) 92vw, 30vw"
                 />
                 <i aria-hidden="true" />
-                <span>Rosey Baby original</span>
               </div>
               <span className="card-number">0{index + 1}</span>
               <p className="eyebrow">{feature.eyebrow}</p>

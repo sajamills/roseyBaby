@@ -21,8 +21,9 @@ contained no exterior/deck/railroad-tracks shots. Still needs a real photo; see
 
 ## Added 2026-08-24 (later same day)
 
-- `catering.jpg`: Rosey Baby's owner staffing a private outdoor event bar, used with permission — `original_97873b77-c770-43db-a986-465d1717ba2c_PXL_20211205_190522111.PORTRAIT.jpg`. Used on the catering page in place of `deck.jpg`.
+- `catering.jpg`: Rosey Baby's owner staffing a private outdoor event bar, used with permission — `original_97873b77-c770-43db-a986-465d1717ba2c_PXL_20211205_190522111.PORTRAIT.jpg`. Used on the catering page in place of `deck.jpg`, and on the homepage "Catering for every crowd" feature card in place of `header.jpg`.
 - `gallery/`: a 10-photo food + drink strip added to the menu page (`/menu`), covering dishes and drinks not otherwise used elsewhere on the site — étouffée, char-broiled oysters, hurricane cocktail, cheeseburger, beer tap wall, seafood pasta, daiquiris, mac and cheese, shrimp tacos, and the bar.
+- `curt.jpg`: Curt Crissey (founder) carrying a fresh tray of crawfish outside Rosey Baby, supplied by the owner. Used on the Our Story page in the "Where the name began" section.
 
 ## Original (2026-07-31)
 

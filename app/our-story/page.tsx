@@ -35,6 +35,16 @@ export default function StoryPage() {
           <h2>Roselyn’s “Rosey Baby”</h2>
         </div>
         <div className="prose">
+          <figure className="story-portrait">
+            <Image
+              src="/rosey-originals/curt.jpg"
+              alt="Curt Crissey carrying a fresh tray of crawfish outside Rosey Baby"
+              width={609}
+              height={406}
+              sizes="(max-width: 800px) 92vw, 40vw"
+            />
+            <figcaption>Curt Crissey</figcaption>
+          </figure>
           <p>
             Curt grew up in Homestead, Florida. His mother was named Roselyn,
             and Curt was her “Rosey Baby.” The family nickname eventually became
