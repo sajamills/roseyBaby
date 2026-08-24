@@ -14,8 +14,9 @@ export async function getMenu(): Promise<MenuRecord[]> {
     token: process.env.SANITY_API_READ_TOKEN,
   });
   try {
-    const menu = await client.fetch<MenuRecord[]>(`*[_type == "menuItem" && available != false] | order(category->order asc, name asc) { name, description, seasonal, available, "category": category->name }`);
-    return menu.length ? menu : fallbackMenu;
+    const menu = await client.fetch<(MenuRecord & { _id: string })[]>(`*[_type == "menuItem" && available != false] | order(category->order asc, name asc) { _id, name, description, seasonal, available, "category": category->name }`);
+    const deduped = Array.from(new Map(menu.map(item => [item._id, item])).values());
+    return deduped.length ? deduped : fallbackMenu;
   } catch {
     return fallbackMenu;
   }
