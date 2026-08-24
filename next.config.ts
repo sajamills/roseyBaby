@@ -4,6 +4,20 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // Old WordPress site structure, still indexed by Google post-migration.
+      { source: "/menu/:path+", destination: "/menu", permanent: true },
+      { source: "/contact", destination: "/visit", permanent: true },
+      { source: "/entrees", destination: "/menu", permanent: true },
+      { source: "/apps", destination: "/menu", permanent: true },
+      { source: "/appetizers", destination: "/menu", permanent: true },
+      { source: "/drinks", destination: "/menu", permanent: true },
+      { source: "/dessert", destination: "/menu", permanent: true },
+      { source: "/desserts", destination: "/menu", permanent: true },
+      { source: "/cajun-specialties", destination: "/menu", permanent: true },
+    ];
+  },
   async headers() {
     const securityHeaders = [
       { key: "X-Content-Type-Options", value: "nosniff" },
