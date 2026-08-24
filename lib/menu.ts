@@ -16,8 +16,10 @@ export async function getMenu(): Promise<MenuRecord[]> {
   try {
     const menu = await client.fetch<(MenuRecord & { _id: string })[]>(`*[_type == "menuItem" && available != false] | order(category->order asc, name asc) { _id, name, description, seasonal, available, "category": category->name }`);
     const deduped = Array.from(new Map(menu.map(item => [item._id, item])).values());
+    console.log(`[getMenu diag] rawLength=${menu.length} dedupedLength=${deduped.length} uniqueIds=${new Set(menu.map(i => i._id)).size}`);
     return deduped.length ? deduped : fallbackMenu;
-  } catch {
+  } catch (err) {
+    console.log(`[getMenu diag] CAUGHT ERROR, using fallback: ${err instanceof Error ? err.message : String(err)}`);
     return fallbackMenu;
   }
 }
