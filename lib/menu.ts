@@ -16,9 +16,9 @@ export async function getMenu(): Promise<MenuRecord[]> {
   try {
     const menu = await client.fetch<(MenuRecord & { _id: string })[]>(`*[_type == "menuItem" && available != false] | order(category->order asc, name asc) { _id, name, description, seasonal, available, "category": category->name }`);
     const deduped = Array.from(new Map(menu.map(item => [item._id, item])).values());
-    console.log(`[getMenu diag] rawLength=${menu.length} dedupedLength=${deduped.length} uniqueIds=${new Set(menu.map(i => i._id)).size}`);
-    console.log(`[getMenu diag] sample ids for Wings: ${JSON.stringify(menu.filter(i => i.name === "Wings").map(i => i._id))}`);
-    console.log(`[getMenu diag] id prefixes: ${JSON.stringify([...new Set(menu.map(i => i._id.split(/[.-]/)[0]))])}`);
+    const dotSchemeIds = menu.filter(i => i._id.startsWith("menuItem.")).map(i => i._id);
+    console.log(`[getMenu diag] dotSchemeCount=${dotSchemeIds.length}`);
+    console.log(`[getMenu diag] dotSchemeIds=${JSON.stringify(dotSchemeIds)}`);
     return deduped.length ? deduped : fallbackMenu;
   } catch (err) {
     console.log(`[getMenu diag] CAUGHT ERROR, using fallback: ${err instanceof Error ? err.message : String(err)}`);
