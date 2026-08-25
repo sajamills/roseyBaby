@@ -2,17 +2,18 @@
 
 ## Launch blockers
 
+- DNS cutover is complete — `roseybaby.com`/`www.roseybaby.com` now point to Vercel and serve the live site.
 - Sign into Sanity and create the publishing webhook described in `README.md`.
-- Update Bluehost DNS for both `roseybaby.com` and `www.roseybaby.com` to the Vercel value `76.76.21.21`, then verify redirects, SSL, canonical URLs, sitemap, forms, and the webhook. Both hostnames are already attached to the Vercel project.
-- Confirm GA4 receives production traffic after the final domain cutover.
-- Complete Google Search Console verification after the final domain resolves to Vercel.
-- Complete Bing Webmaster verification after the final domain resolves to Vercel.
-- Connect the real online-ordering provider; keep `/order` noindexed until then.
+- Confirm GA4 receives production traffic now that the domain cutover is live.
+- Complete Google Search Console verification now that the domain resolves to Vercel.
+- Complete Bing Webmaster verification now that the domain resolves to Vercel.
+- Connect a real online-ordering provider; the `/order` CTA was changed to "Call to order" in the meantime since ordering isn't wired up yet.
 - Update every Typeform completion/thank-you link to the final production domain at launch.
+- Finish the Resend email integration (DNS verification for `roseybaby.com` is in progress as of 2026-08-25) so Typeform inquiries send a real email notification instead of relying on Typeform's own delivery.
+- Manually confirm in the Typeform dashboard that all three forms' notification email is set to `meetyouonthetracks@gmail.com`.
 
 ## Content and integrations
 
-- Add prices or explicit market-price labels to all 72 Sanity menu items.
 - Add Sanity images to the seven blog posts and priority upcoming events.
 - Enrich the 65 events missing a street address and 61 events missing an end time where official sources provide the data.
 - Add catering menus, packages, pricing guidance, and approved venue relationships to Sanity.
@@ -38,20 +39,26 @@
 
 ## Launch QA audit (friend review, 2026-08-24)
 
-A friend ran an external audit against the site before the domain cutover fully propagated. Note: the audit's #1 finding (canonical domain / redirects / noindex staging) appears to be based on stale/cached data — `roseybaby.com` now correctly redirects to `www.roseybaby.com`, and canonical tags, sitemap.xml, robots.txt, and OG/JSON-LD URLs were already fixed to use `https://www.roseybaby.com` on 2026-08-24. The old-WordPress-URL redirect mapping below is still real and open.
+A friend ran an external audit against the site before the domain cutover fully propagated. Most findings are now resolved — see "Completed August 25, 2026" below. Remaining open items:
 
-- [Launch blocker] Add 301 redirects (or proper 410s) from old WordPress URLs to the closest new page, so search rankings/backlinks survive the cutover: `/contact/` → `/visit`, `/menu/apps/`, `/menu/entrees/`, `/menu/drinks/`, `/menu/dessert/` → `/menu` (or menu section anchors), plus any other indexed WordPress category/tag/archive URLs.
-- [High] The linked OpenTable listing still shows a stale menu (last updated Feb 2022, old prices, "Fried Crowfish Tails" typo). Update it, ask OpenTable to unlink/remove the menu tab in favor of the site's `/menu`, or confirm it matches before launch.
-- [High] Reconcile `/menu` line-by-line against the real current menu: item names/descriptions, prices, sides/substitutions, market-price crawfish language, alcohol/age language, spelling of Cajun terms (po'boy, étouffée, etc.), raw-oyster/undercooked-food advisory, allergen language, and consistency with DoorDash/Grubhub/OpenTable/printed menus (these currently disagree with each other and should have one designated source of truth).
-- [High] Test the catering form (and any other form) end-to-end as a real customer: required-field/invalid-input handling, inline error messages, actual email delivery to a monitored inbox, customer confirmation, spam/rate-limiting, duplicate-submission handling, keyboard-only completion, 200% zoom, privacy disclosure, and a clear success screen.
-- [High] Verify the `BusinessStatus` open/closed indicator explicitly uses `America/Chicago`, updates without a redeploy, handles DST, doesn't flash the wrong status during hydration, and says what's next (e.g. "Closed · opens Monday at 11 AM") rather than just open/closed.
-- [Medium] Soften "live Louisiana crawfish" in the hero so it doesn't read as year-round — pair it with season/availability language on the hero, `/crawfish`, and `/menu` (e.g. "season and availability vary based on weather and supply — call or check our latest update").
-- [Medium] Improve image alt text specificity (name the actual dish/scene instead of generic phrasing like "A dish served at Rosey Baby"); confirm purely decorative labels (e.g. feature-card numbering) aren't announced to screen readers.
-- [Medium] Verify mobile nav accessibility when closed: excluded from tab order, `aria-hidden`, focus moves into the menu on open and back to the toggle on close, Escape closes it, and the toggle announces "Open/Close navigation" rather than just "Menu." Consider adding a "Skip to main content" link.
+- [High] Test the catering form (and any other form) end-to-end as a real customer: required-field/invalid-input handling, inline error messages, actual email delivery to a monitored inbox, customer confirmation, spam/rate-limiting, duplicate-submission handling, keyboard-only completion, 200% zoom, privacy disclosure, and a clear success screen. (Blocked in part on the Resend email integration above.)
 - [Medium] Confirm every contact action is a real link, not JS-only (`tel:+16623241949`, `mailto:meetyouonthetracks@gmail.com`, directions), with visible keyboard-focus states, and that external links are clearly labeled.
 - [Medium] Test layout at in-between widths (768/820/1024/1280px) and 200% browser zoom, not just phone/desktop — header wrapping, long menu-item names, iPhone safe-area spacing, and whether the mobile bottom bar covers footer content.
-- [Low–medium] Add footer links for Instagram/Facebook/Untappd, a Privacy Policy, an Accessibility statement, and a copyright line; consider a branded domain email (e.g. `hello@roseybaby.com`) instead of Gmail.
-- [Launch checklist] Standard technical pre-launch pass: unique title/description per page (Menu, Crawfish, Beer Wall, Catering, Events, Starkville, Blog, Our Story, Visit), structured-data completeness (address/phone/hours/cuisine/menu URL/price range/reservation URL/socials), OG/social share images, favicon/app icons, custom 404, no console errors or placeholder content, and analytics wired to real conversion actions (reservations, calls, directions, orders, menu views, catering submissions) without firing on staging.
+- [Launch checklist] Standard technical pre-launch pass: unique title/description per page (Menu, Crawfish, Beer Wall, Catering, Events, Starkville, Blog, Our Story, Visit), structured-data completeness (address/phone/hours/cuisine/menu URL/price range/reservation URL/socials), OG/social share images, favicon/app icons, no console errors or placeholder content, and analytics wired to real conversion actions (reservations, calls, directions, orders, menu views, catering submissions) without firing on staging.
+
+## Completed August 25, 2026
+
+- Fixed a critical live bug: every menu item was showing doubled (144 vs. 72) due to two overlapping ID schemes from historical seed scripts. Deleted the 72 stale duplicates and added defensive de-duplication in `lib/menu.ts`.
+- Fixed duplicate events on `/events` (same class of bug) and added event filters: MSU Football / All MSU / All / Arts.
+- Updated the live `/menu` content end to end to match the new official 2026 printed menu — 75 items across 10 categories (Starters, Sides, Po-boys & More, Fried to Perfection, Cajun Favorites, Steaks, Chops, Desserts, Cocktails, Shooters) with real prices stored in Sanity. Prices are intentionally not displayed on the public page yet (existing schema design — ask if that should change). Beer list intentionally left off the menu page; it stays on `/beer-wall`. The OpenTable-hosted menu was also updated (by the user, directly).
+- Replaced 7 of 8 site photos with new Rosey Baby originals, added a catering photo and a Curt/Our-Story photo, and added a 10-photo food/drink gallery to `/menu`.
+- Fixed mobile UI bugs: black photo placeholder boxes before images loaded, and buttons all rendering the same color due to a CSS specificity conflict.
+- Implemented the friend's QA audit plan: mobile-nav keyboard accessibility (Escape to close, focus management, dynamic aria-label), a "Skip to main content" link, more specific image alt text, footer additions (copyright line, Privacy and Accessibility pages, Catering and Reserve-a-table links), and softened "live Louisiana crawfish" wording with season/availability caveats on the hero, `/crawfish`, and `/menu`.
+- Added 301 redirects from old WordPress URLs (`/menu/apps/`, `/contact`, etc.) to their closest new page, and added a branded custom 404 page.
+- Fixed a GitHub Actions uptime-monitor bug that was sending false-positive failure emails (health check required all sync sources to succeed in the same run instead of tolerating one transient failure) and cleared the already-stale stored state.
+- Responded to a pasted SEO/PageSpeed audit: canonical domain fixed to `www.roseybaby.com`, `Restaurant`+`LocalBusiness` schema, AVIF/WebP image formats.
+- Exported all three Typeform question sets to a PDF for stakeholder review.
+- Diagnosed and fixed the Sanity Studio "X-Frame-Options" load error; changed the "Order online" CTA to "Call to order" since online ordering isn't wired up yet.
 
 ## Completed August 1, 2026
 
