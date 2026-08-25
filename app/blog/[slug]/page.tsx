@@ -3,8 +3,9 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { fallbackPosts, getPost } from "@/lib/editorial";
 import { notFound } from "next/navigation";
-import { safeJsonLd, siteUrl } from "@/lib/seo";
+import { siteUrl } from "@/lib/seo";
 import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return fallbackPosts.map(({ slug }) => ({ slug }));
@@ -86,10 +87,7 @@ export default async function PostPage({
   };
   return (
     <main id="main-content">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <SiteHeader />
       <article className="article-page">
         <header>

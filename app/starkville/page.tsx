@@ -3,8 +3,9 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { getEvents } from "@/lib/editorial";
 import { starkvilleGuides } from "@/lib/starkville-guides";
-import { safeJsonLd, siteUrl } from "@/lib/seo";
+import { siteUrl } from "@/lib/seo";
 import HeroImage from "@/components/HeroImage";
+import JsonLd from "@/components/JsonLd";
 
 export const revalidate = 3600;
 export const metadata: Metadata = {
@@ -37,10 +38,7 @@ export default async function StarkvillePage() {
   };
   return (
     <main id="main-content">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <SiteHeader />
       <section className="guide-hero">
         <HeroImage src="/rosey-originals/deck.jpg" alt="Starkville from the railroad tracks" priority />

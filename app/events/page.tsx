@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { getEvents } from "@/lib/editorial";
-import { safeJsonLd, siteUrl } from "@/lib/seo";
+import { siteUrl } from "@/lib/seo";
 import HeroImage from "@/components/HeroImage";
 import EventsFilter from "@/components/EventsFilter";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Starkville & MSU Events Calendar",
@@ -62,10 +63,7 @@ export default async function EventsPage() {
   };
   return (
     <main id="main-content">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <SiteHeader />
       <section className="events-hero">
         <HeroImage src="/rosey-originals/deck.jpg" alt="The Rosey Baby deck in Starkville" priority />

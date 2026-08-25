@@ -14,18 +14,27 @@ test("production configuration includes essential security headers", async () =>
 });
 
 test("SEO infrastructure includes sitemap, crawler rules, and structured data", async () => {
-  const [robots, sitemap, seo, layout] = await Promise.all([
+  const [robots, sitemap, seo, layout, jsonLd] = await Promise.all([
     read("app/robots.ts"),
     read("app/sitemap.ts"),
     read("lib/seo.ts"),
     read("app/layout.tsx"),
+    read("components/JsonLd.tsx"),
   ]);
   assert.match(robots, /OAI-SearchBot/);
   assert.match(robots, /sitemap/i);
   assert.match(sitemap, /blog/);
   assert.match(sitemap, /events/);
   assert.match(seo, /Restaurant/);
-  assert.match(layout, /application\/ld\+json/);
+  assert.match(layout, /JsonLd/);
+  assert.match(jsonLd, /application\/ld\+json/);
+});
+
+test("production configuration serves a Content Security Policy compatible with the embedded Sanity Studio", async () => {
+  const config = await read("next.config.ts");
+  assert.match(config, /Content-Security-Policy/);
+  assert.match(config, /studioCsp/);
+  assert.match(config, /siteCsp/);
 });
 
 test("Sanity Studio is mounted at the embedded production path", async () => {

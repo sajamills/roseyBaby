@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { getMenu } from "@/lib/menu";
-import { safeJsonLd, siteUrl } from "@/lib/seo";
+import { siteUrl } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
 
 export const revalidate = 300;
 export const metadata: Metadata = { title: "Menu", description: "Explore Rosey Baby’s Cajun specialties, seafood, po-boys, wings, cocktails, and desserts in Starkville, Mississippi.", alternates: { canonical: "/menu" } };
@@ -43,7 +44,7 @@ export default async function MenuPage() {
     })),
   };
   return <main id="main-content" className="menu-page">
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(menuJsonLd) }} />
+    <JsonLd data={menuJsonLd} />
     <SiteHeader />
     <section className="page-hero menu-hero"><p className="eyebrow">Food from the tracks</p><h1>The Menu</h1><p>Elevated Cajun roots, Starkville favorites, and no shortage of flavor. Prices and availability may change; ask your server for current details.</p></section>
     <section className="menu-gallery" aria-label="Photos of Rosey Baby food and drinks">{galleryPhotos.map(photo => <div key={photo.src}><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 700px) 50vw, (max-width: 1100px) 33vw, 20vw" /></div>)}</section>
