@@ -11,9 +11,9 @@
     "start": "next start",
     "studio": "sanity dev",
     "studio:deploy": "sanity deploy",
-    "sanity:seed": "node scripts/seed-sanity.mjs",
-    "typeform:create": "node scripts/create-typeform.mjs",
-    "typeform:webhook": "node scripts/create-typeform-webhook.mjs",
+    "sanity:seed": "node --env-file-if-exists=.env.local scripts/seed-sanity.mjs",
+    "typeform:create": "node --env-file-if-exists=.env.local scripts/create-typeform.mjs",
+    "typeform:webhook": "node --env-file-if-exists=.env.local scripts/create-typeform-webhook.mjs",
     "test": "node --experimental-test-module-mocks --import ./tests/helpers/register-alias-loader.mjs --test tests/*.test.mjs",
     "test:production": "node scripts/smoke-production.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"

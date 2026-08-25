@@ -114,7 +114,7 @@ Typeform's own notification email is unreliable enough that `/api/typeform-webho
 Register the webhook once per form (repeat for the catering, crawfish boil, and bartending form IDs — find each ID in the Typeform dashboard URL or via `GET https://api.typeform.com/forms`):
 
 ```bash
-TYPEFORM_ACCESS_TOKEN=... npm run typeform:webhook -- <form_id> https://www.roseybaby.com
+npm run typeform:webhook -- <form_id> https://www.roseybaby.com
 ```
 
 The script prints a generated webhook secret the first time it runs for a given form (pass `TYPEFORM_WEBHOOK_SECRET` yourself to reuse one instead) — save it as `TYPEFORM_WEBHOOK_SECRET` in Vercel; Typeform will not show it again. Set `RESEND_ACCESS_TOKEN` in Vercel too, or the webhook will 401 and 500 respectively. Until the `roseybaby.com` sending domain is verified with Resend, email sends from the shared `onboarding@resend.dev` address, which only delivers to the Resend account's own verified inbox — set `RESEND_FROM_ADDRESS` once a domain is verified.
