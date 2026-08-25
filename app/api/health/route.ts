@@ -43,7 +43,7 @@ export async function GET() {
     const hasRecords =
       (sync?.sportsCount || 0) + (sync?.communityCount || 0) > 0;
     const healthy =
-      sync?.status === "success" &&
+      sync?.status !== "failed" &&
       hasRecords &&
       ageHours !== null &&
       ageHours < 216;

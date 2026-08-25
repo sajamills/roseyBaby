@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
       await client.createOrReplace({
         _id: "calendar-sync-status", _type: "syncStatus", title: "Weekly events sync",
         lastAttemptAt: attemptedAt,
-        ...(failures.length === 0 ? { lastSuccessfulAt: attemptedAt } : {}),
+        ...(failures.length < 2 ? { lastSuccessfulAt: attemptedAt } : {}),
         status: failures.length === 0 ? "success" : failures.length === 2 ? "failed" : "partial",
         sportsCount, communityCount,
         removedCount: (sports.status === "fulfilled" ? sports.value.removed : 0) + (community.status === "fulfilled" ? community.value.removed : 0),
