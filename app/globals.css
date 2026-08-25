@@ -5,6 +5,12 @@
   --cream: #0d100f;
   --paper: #151817;
   --red: #e44840;
+  /* Same hue as --red, darkened to pass WCAG AA (4.5:1) for white text set
+     directly on a solid red fill (buttons, CTA bands, badges). --red itself
+     stays unchanged for text/borders/accents against the dark page
+     background, where the lighter, truer brand red already has plenty of
+     contrast. */
+  --red-solid: #bd302c;
   --gold: #d2a046;
   --green: #0d261d;
   --light-text: #f4efe5;
@@ -68,7 +74,7 @@ summary:focus-visible {
   overflow: visible;
   clip: auto;
   padding: 14px 20px;
-  background: var(--red);
+  background: var(--red-solid);
   color: white;
   font-size: 12px;
   font-weight: 800;
@@ -114,7 +120,7 @@ summary:focus-visible {
   padding: 13px 22px;
   display: flex;
   align-items: center;
-  background: var(--red);
+  background: var(--red-solid);
   color: white;
   font-weight: 800;
   text-transform: uppercase;
@@ -187,8 +193,8 @@ h1 em {
   color: white;
 }
 .button-primary {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--red-solid);
+  border-color: var(--red-solid);
   color: white;
 }
 .hero-art {
@@ -350,7 +356,7 @@ h1 em {
   font-size: 11px;
 }
 .story-band {
-  background: var(--red);
+  background: var(--red-solid);
   color: white;
   padding: 110px max(7vw, 40px);
 }
@@ -555,7 +561,7 @@ footer .wordmark {
     font-weight: 800;
   }
   .mobile-actions a:last-child {
-    background: var(--red);
+    background: var(--red-solid);
   }
 }
 @media (max-width: 560px) {
@@ -625,7 +631,7 @@ footer .wordmark {
   }
 }
 .menu-hero {
-  background: var(--red);
+  background: var(--red-solid);
 }
 .menu-gallery {
   display: grid;
@@ -800,7 +806,7 @@ footer .wordmark {
 }
 .catering-final {
   padding: 100px 7vw;
-  background: var(--red);
+  background: var(--red-solid);
   color: white;
 }
 .catering-final h2 {
@@ -920,7 +926,7 @@ footer .wordmark {
 }
 .detail-cta {
   padding: 100px 7vw;
-  background: var(--red);
+  background: var(--red-solid);
   color: white;
 }
 .detail-cta h2 {
@@ -1130,7 +1136,7 @@ footer .wordmark {
 }
 .inquiry-grid a:hover {
   color: white;
-  background: var(--red);
+  background: var(--red-solid);
   transform: translateY(-5px);
 }
 .inquiry-grid span {
@@ -1184,7 +1190,7 @@ footer .wordmark {
   transition: 0.2s ease;
 }
 .venue-cards a:hover {
-  background: var(--red);
+  background: var(--red-solid);
   transform: translateY(-5px);
 }
 .venue-cards span {
@@ -1333,8 +1339,8 @@ footer,
 
 .button-primary:hover {
   color: white;
-  background: #bd302c;
-  border-color: #bd302c;
+  background: #a32823;
+  border-color: #a32823;
 }
 
 .feature-grid,
@@ -1806,8 +1812,8 @@ footer {
   cursor: pointer;
 }
 .event-filter-active {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--red-solid);
+  border-color: var(--red-solid);
   color: white;
 }
 .event-filter-empty {
@@ -1835,7 +1841,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: white;
-  background: var(--red);
+  background: var(--red-solid);
   text-align: center;
 }
 .event-date strong {

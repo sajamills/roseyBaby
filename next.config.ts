@@ -87,6 +87,9 @@ const nextConfig: NextConfig = {
     const siteHeaders = [
       ...securityHeaders,
       { key: "Content-Security-Policy", value: siteCsp },
+      // Only on the main site, not /studio: Sanity Studio's login uses a
+      // window.opener-based OAuth popup, which same-origin COOP would sever.
+      { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
     ];
 
     return [

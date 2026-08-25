@@ -37,5 +37,12 @@
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3"
   },
-  "type": "module"
+  "type": "module",
+  "browserslist": [
+    "chrome >= 91",
+    "edge >= 91",
+    "firefox >= 90",
+    "safari >= 15",
+    "ios_saf >= 15"
+  ]
 }

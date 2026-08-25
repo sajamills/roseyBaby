@@ -82,7 +82,7 @@ export default function Home() {
         <BusinessStatus />
         <p>11 AM–10 PM</p>
         <Link href="tel:+16623241949">662-324-1949</Link>
-        <Link href="https://maps.google.com/?q=300+S+Jackson+St+Starkville+MS+39759">
+        <Link href="https://www.google.com/maps/dir/?api=1&destination=300%20S%20Jackson%20St%2C%20Starkville%2C%20MS%2039759">
           Get directions ↗
         </Link>
       </section>
