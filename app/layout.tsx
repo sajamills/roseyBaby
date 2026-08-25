@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
-import { restaurantJsonLd, safeJsonLd } from "@/lib/seo";
+import { restaurantJsonLd } from "@/lib/seo";
 import SiteFooter from "@/components/SiteFooter";
 import Analytics from "@/components/Analytics";
+import JsonLd from "@/components/JsonLd";
 
 const sans = DM_Sans({ variable: "--font-sans", subsets: ["latin"] });
 const display = Fraunces({ variable: "--font-display", subsets: ["latin"] });
@@ -64,10 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sans.variable} ${display.variable}`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: safeJsonLd(restaurantJsonLd) }}
-        />
+        <JsonLd data={restaurantJsonLd} />
         {children}
         <SiteFooter />
         <Analytics />
