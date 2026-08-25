@@ -18,6 +18,7 @@ export default function HeroImage({
         fill
         priority={priority}
         sizes="100vw"
+        quality={70}
       />
       <span className="hero-background-shade" aria-hidden="true" />
     </>

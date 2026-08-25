@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
+    // 75 stays the default for every <Image> that doesn't set `quality`; 70
+    // is opt-in for large photos where Lighthouse flagged excess bytes at 75
+    // with no visible difference (hero photos, homepage feature cards).
+    qualities: [70, 75],
   },
   async redirects() {
     return [

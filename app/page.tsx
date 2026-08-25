@@ -109,6 +109,7 @@ export default function Home() {
                   alt={`${feature.title} at Rosey Baby`}
                   fill
                   sizes="(max-width: 900px) 92vw, 30vw"
+                  quality={70}
                 />
                 <i aria-hidden="true" />
               </div>
