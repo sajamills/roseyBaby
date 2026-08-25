@@ -35,6 +35,13 @@ const features = [
     href: "/catering",
     image: "/rosey-originals/catering.jpg",
   },
+  {
+    eyebrow: "Every Tuesday",
+    title: "Wing Night",
+    body: "50¢ wings, dine-in, all day, in any flavor on the menu.",
+    href: "/starkville/wing-night-starkville",
+    image: "/rosey-originals/appetizers.jpg",
+  },
 ];
 
 export default function Home() {

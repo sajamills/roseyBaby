@@ -40,6 +40,7 @@ export type CalendarEvent = {
 };
 
 const postFallbackImages: Record<string, string> = {
+  "wing-night-at-rosey-baby": "/rosey-originals/appetizers.jpg",
   "how-to-host-crawfish-boil-starkville": "/rosey-originals/deck.jpg",
   "how-to-wash-live-crawfish": "/rosey-originals/oysters.jpg",
   "how-to-season-crawfish-boil": "/rosey-originals/appetizers.jpg",
@@ -58,6 +59,78 @@ const withPostImage = (post: Post): Post => ({
 });
 
 export const fallbackPosts: Post[] = [
+  {
+    title: "Wing Night at Rosey Baby: 50-Cent Wings Every Tuesday",
+    slug: "wing-night-at-rosey-baby",
+    category: "Wings",
+    publishedAt: "2026-08-25T12:00:00-05:00",
+    excerpt:
+      "Every Tuesday, Rosey Baby's wings are 50 cents each, dine-in, in any flavor. Here's how wing night works and which flavors to order.",
+    body: [
+      {
+        _key: "wing-1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "wing-1a",
+            text: "Tuesday is wing night at Rosey Baby: 50-cent wings, dine-in, all day, in any flavor on the menu. No coupon, no app, no limited window — just show up hungry.",
+          },
+        ],
+      },
+      {
+        _key: "wing-2",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "wing-2a", text: "How wing night works" }],
+      },
+      {
+        _key: "wing-3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "wing-3a",
+            text: "Every Tuesday, dine-in orders get wings at 50 cents each. It runs all day rather than a short happy-hour window, and there's no cap on how many you order — bring the whole table and mix flavors.",
+          },
+        ],
+      },
+      {
+        _key: "wing-4",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "wing-4a", text: "Pick a flavor (or a few)" }],
+      },
+      {
+        _key: "wing-5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "wing-5a",
+            text: "Rosey Baby's wings are fried to order and tossed in buffalo, BBQ, sweet n' spicy, Cajun dry rub, or lemon pepper. Ordering a couple of flavors per dozen is the easiest way to cover the table without anyone missing out on their favorite.",
+          },
+        ],
+      },
+      {
+        _key: "wing-6",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "wing-6a", text: "Pair it with the beer wall" }],
+      },
+      {
+        _key: "wing-7",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "wing-7a",
+            text: "Wing night pairs naturally with Rosey Baby's rotating tap wall — the largest in Mississippi. Order a round of wings across a couple of flavors and work through a few taps while you're at it.",
+          },
+        ],
+      },
+    ],
+  },
   {
     title: "How to Host a Crawfish Boil in Starkville",
     slug: "how-to-host-crawfish-boil-starkville",

@@ -29,6 +29,19 @@
 - Monitor indexing and expand `/starkville` guides based on real Search Console queries.
 - Minor polish: `app/layout.tsx` icons all point at the same full-size `rosey-baby-logo-reference.png` for `icon`/`shortcut`/`apple` (browser-scaled, not purpose-sized — an Apple touch icon is ideally a 180×180 non-transparent square). There's also an unused, unreferenced `public/favicon.svg` sitting alongside it.
 
+## "Wings in Starkville" SEO push (2026-08-25)
+
+Researched the actual SERP (Rosey Baby had zero indexed content mentioning wing night/50-cent wings anywhere — confirmed via live search). Shipped: a new `/starkville/wing-night-starkville` local guide (same answer-engine format as the crawfish-season guide, targets "wing night starkville," "50 cent wings starkville"), a new blog post at `/blog/wing-night-at-rosey-baby`, a Wings promo callout on `/menu` (was previously just one line under Starters), and a 4th homepage feature card. All cross-link to each other and flow into the sitemap automatically.
+
+Still needed — off-page work I can't do myself:
+
+- Add "Wing Night" as a recurring **Google Business Profile post**. A competing bar's Tuesday-wing-night Facebook post is currently outranking every Starkville restaurant's own website for this query, which says social/GBP content is what's actually winning this space right now — a GBP post is the closest equivalent lever available.
+- Fix stale wing pricing on the Tripadvisor listing (shows $8/$14 for 6/12 wings; the real, current menu price is $11/$18).
+- A few Facebook/Instagram posts consistently using "Wing Night," "Tuesday," and "Starkville."
+- A real photo of the wings — both new pieces of content currently reuse `appetizers.jpg` as a fallback image since no dedicated wing photo exists yet.
+
+Also found in passing: the shared `/starkville/[slug]` guide template hardcodes "Updated July 31, 2026" in its byline for every guide regardless of actual publish date (pre-existing, not introduced by this work) — the new wing-night guide shows the same stale date. Worth making that per-guide if guides start getting dated more often.
+
 ## Engineering and operations
 
 - [Found 2026-08-25] `/api/health` returned 503 for ~26 hours (2026-08-24 ~10:54 UTC to 2026-08-25 ~12:57 UTC, 32 of 60 uptime checks failed) before self-recovering when the weekly Monday sync cron ran successfully. Root cause not fully diagnosed — the health document's `status` field going bad a day before the scheduled weekly cron ran doesn't match simple staleness (216h threshold), so something else touched `calendar-sync-status` in Sanity. Investigate what changed it, and consider whether the sync cron's weekly cadence is too infrequent given a single bad run can leave health red for up to a week with only a 15-minute-interval GitHub Actions check as the sole alarm.
