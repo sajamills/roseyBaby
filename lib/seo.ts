@@ -8,7 +8,7 @@ export const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Restaurant", "LocalBusiness"],
+      "@type": ["Restaurant", "LocalBusiness", "BarOrPub"],
       "@id": `${siteUrl}/#restaurant`,
       name: "Rosey Baby",
       alternateName: "Rosey Baby Starkville",

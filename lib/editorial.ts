@@ -40,6 +40,7 @@ export type CalendarEvent = {
 };
 
 const postFallbackImages: Record<string, string> = {
+  "game-day-bar-near-mississippi-state": "/rosey-originals/gallery/beer-taps.jpg",
   "wing-night-at-rosey-baby": "/rosey-originals/wings.jpg",
   "how-to-host-crawfish-boil-starkville": "/rosey-originals/deck.jpg",
   "how-to-wash-live-crawfish": "/rosey-originals/oysters.jpg",
@@ -59,6 +60,78 @@ const withPostImage = (post: Post): Post => ({
 });
 
 export const fallbackPosts: Post[] = [
+  {
+    title: "The Best Game Day Bar Near Mississippi State",
+    slug: "game-day-bar-near-mississippi-state",
+    category: "Game day",
+    publishedAt: "2026-08-25T13:00:00-05:00",
+    excerpt:
+      "What to look for in a Starkville game day bar, and why Rosey Baby's beer wall and Cajun food make a solid pick before or after kickoff.",
+    body: [
+      {
+        _key: "gdb-1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "gdb-1a",
+            text: "A good game day bar near Mississippi State comes down to more than how many TVs are on the wall — broadcast reliability, group seating, food, and parking all matter just as much once kickoff hits.",
+          },
+        ],
+      },
+      {
+        _key: "gdb-2",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "gdb-2a", text: "What to look for" }],
+      },
+      {
+        _key: "gdb-3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "gdb-3a",
+            text: "Confirm the broadcast ahead of time — television assignments can change during the week. After that, weigh group seating, sound, food, and how easy the venue is to reach and park near on a busy Starkville game day.",
+          },
+        ],
+      },
+      {
+        _key: "gdb-4",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "gdb-4a", text: "Rosey Baby's beer wall" }],
+      },
+      {
+        _key: "gdb-5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "gdb-5a",
+            text: "Rosey Baby is a Cajun restaurant and bar near downtown Starkville with a rotating tap wall — the largest in Mississippi — plus Cajun food and wings to go with it. Call ahead of a specific game to confirm the broadcast and seating for your group.",
+          },
+        ],
+      },
+      {
+        _key: "gdb-6",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "gdb-6a", text: "Reserve for rivalry games" }],
+      },
+      {
+        _key: "gdb-7",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "gdb-7a",
+            text: "Football, postseason baseball, and major conference games draw bigger crowds than a typical Saturday. Reserve ahead, arrive together, and have a plan for getting home safely afterward.",
+          },
+        ],
+      },
+    ],
+  },
   {
     title: "Wing Night at Rosey Baby: 50-Cent Wings Every Tuesday",
     slug: "wing-night-at-rosey-baby",

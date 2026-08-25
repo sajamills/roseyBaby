@@ -141,9 +141,17 @@ export default async function BeerWallPage() {
             A dark stout after gumbo. Ask the team what is fresh and what pairs
             best with your order.
           </p>
-          <Link className="button" href="/menu">
-            Explore the food menu →
-          </Link>
+          <div className="action-row">
+            <Link className="button" href="/menu">
+              Explore the food menu →
+            </Link>
+            <Link className="button" href="/starkville/downtown-starkville-bars">
+              Downtown Starkville bars →
+            </Link>
+            <Link className="button" href="/starkville/where-to-watch-msu-games">
+              Game day bars guide →
+            </Link>
+          </div>
         </div>
       </section>
     </main>
