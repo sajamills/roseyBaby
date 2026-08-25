@@ -40,7 +40,7 @@ const features = [
     title: "Wing Night",
     body: "50¢ wings, dine-in, all day, in any flavor on the menu.",
     href: "/starkville/wing-night-starkville",
-    image: "/rosey-originals/appetizers.jpg",
+    image: "/rosey-originals/wings.jpg",
   },
 ];
 

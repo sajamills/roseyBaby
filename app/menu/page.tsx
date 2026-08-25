@@ -20,6 +20,7 @@ const galleryPhotos = [
   { src: "/rosey-originals/gallery/mac-and-cheese.jpg", alt: "Mac and cheese with sausage and bacon at Rosey Baby" },
   { src: "/rosey-originals/gallery/shrimp-tacos.jpg", alt: "Fried shrimp tacos at Rosey Baby" },
   { src: "/rosey-originals/gallery/bar-bottles.jpg", alt: "The bar at Rosey Baby" },
+  { src: "/rosey-originals/wings.jpg", alt: "Wings at Rosey Baby" },
 ];
 
 export default async function MenuPage() {

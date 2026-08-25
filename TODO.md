@@ -38,9 +38,13 @@ Still needed — off-page work I can't do myself:
 - Add "Wing Night" as a recurring **Google Business Profile post**. A competing bar's Tuesday-wing-night Facebook post is currently outranking every Starkville restaurant's own website for this query, which says social/GBP content is what's actually winning this space right now — a GBP post is the closest equivalent lever available.
 - Fix stale wing pricing on the Tripadvisor listing (shows $8/$14 for 6/12 wings; the real, current menu price is $11/$18).
 - A few Facebook/Instagram posts consistently using "Wing Night," "Tuesday," and "Starkville."
-- A real photo of the wings — both new pieces of content currently reuse `appetizers.jpg` as a fallback image since no dedicated wing photo exists yet.
+- [Done 2026-08-25] Real wing photo added (`public/rosey-originals/wings.jpg`) — now used on the blog post, the homepage feature card, and added to the `/menu` gallery.
 
 Also found in passing: the shared `/starkville/[slug]` guide template hardcodes "Updated July 31, 2026" in its byline for every guide regardless of actual publish date (pre-existing, not introduced by this work) — the new wing-night guide shows the same stale date. Worth making that per-guide if guides start getting dated more often.
+
+## Careers page (2026-08-25)
+
+Added `/careers` (nav + footer link), a new live Typeform (`EkhLs3xp`, `NEXT_PUBLIC_CAREERS_TYPEFORM_URL`) with its webhook already registered against the shared `TYPEFORM_WEBHOOK_SECRET` — applications email `meetyouonthetracks@gmail.com` (cc'd to the temporary dev address) the same way catering/crawfish/bartending inquiries do. Note: the Typeform account's plan doesn't support file uploads (`NOT_ALLOWED_FILE-UPLOAD-STORAGE`, a paid-tier feature) — the form asks for a resume link or an email instead of an upload field. Still needed: add `NEXT_PUBLIC_CAREERS_TYPEFORM_URL` to Vercel's Production env (same rollout step every new Typeform needs) and write the real "why work here" specifics (pay, benefits, culture) once the user provides them — the current copy is intentionally generic to avoid inventing facts.
 
 ## Engineering and operations
 

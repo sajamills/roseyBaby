@@ -1,0 +1,21 @@
+{
+  "title": "Rosey Baby Careers Application",
+  "type": "form",
+  "settings": {"language":"en","is_public":true,"show_progress_bar":true,"show_question_number":true,"meta":{"title":"Rosey Baby Careers Application","description":"Apply to join the Rosey Baby team in Starkville, Mississippi.","allow_indexing":false}},
+  "welcome_screens": [{"ref":"welcome","title":"Join the Rosey Baby team","properties":{"description":"Tell us a bit about yourself and what role you're interested in. We review every application and typically respond within a week.","show_button":true,"button_text":"Start application"}}],
+  "fields": [
+    {"ref":"position","title":"Which position are you interested in?","type":"multiple_choice","properties":{"choices":[{"label":"Server"},{"label":"Bartender"},{"label":"Host / Hostess"},{"label":"Line cook"},{"label":"Kitchen prep"},{"label":"Dishwasher / Busser"},{"label":"Other"}]},"validations":{"required":true}},
+    {"ref":"availability","title":"What's your availability?","type":"multiple_choice","properties":{"allow_multiple_selection":true,"choices":[{"label":"Weekday days"},{"label":"Weekday nights"},{"label":"Weekend days"},{"label":"Weekend nights"},{"label":"Open to any shift"}]},"validations":{"required":true}},
+    {"ref":"employment_type","title":"Are you looking for full-time or part-time work?","type":"multiple_choice","properties":{"choices":[{"label":"Full-time"},{"label":"Part-time"},{"label":"Either"}]},"validations":{"required":true}},
+    {"ref":"start_date","title":"When could you start?","type":"date","validations":{"required":true}},
+    {"ref":"experience","title":"Tell us about your relevant experience, if any.","type":"long_text"},
+    {"ref":"eighteen_plus","title":"Are you at least 18 years old?","type":"yes_no","validations":{"required":true}},
+    {"ref":"why_rosey_baby","title":"Why do you want to work at Rosey Baby?","type":"long_text"},
+    {"ref":"resume_link","title":"If you have a resume online (LinkedIn, Google Drive, etc.), paste the link here. Otherwise, feel free to email it to meetyouonthetracks@gmail.com.","type":"short_text"},
+    {"ref":"full_name","title":"What is your full name?","type":"short_text","validations":{"required":true}},
+    {"ref":"email","title":"What is your email address?","type":"email","validations":{"required":true}},
+    {"ref":"phone","title":"What is your phone number?","type":"phone_number","validations":{"required":true}},
+    {"ref":"referral_source","title":"How did you hear about this opening?","type":"multiple_choice","properties":{"choices":[{"label":"Walked in / know Rosey Baby"},{"label":"Friend or family"},{"label":"Facebook"},{"label":"Instagram"},{"label":"Mississippi State"},{"label":"Website"},{"label":"Other"}]}}
+  ],
+  "thankyou_screens": [{"ref":"thanks","title":"Thanks for applying.","properties":{"description":"We review every application and typically respond within a week.","show_button":true,"button_text":"Visit Rosey Baby","button_mode":"redirect","redirect_url":"https://roseybaby.com/careers"}}]
+}

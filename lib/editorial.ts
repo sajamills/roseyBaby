@@ -40,7 +40,7 @@ export type CalendarEvent = {
 };
 
 const postFallbackImages: Record<string, string> = {
-  "wing-night-at-rosey-baby": "/rosey-originals/appetizers.jpg",
+  "wing-night-at-rosey-baby": "/rosey-originals/wings.jpg",
   "how-to-host-crawfish-boil-starkville": "/rosey-originals/deck.jpg",
   "how-to-wash-live-crawfish": "/rosey-originals/oysters.jpg",
   "how-to-season-crawfish-boil": "/rosey-originals/appetizers.jpg",

@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/beer-wall", frequency: "weekly", priority: 0.8 },
     { path: "/visit", frequency: "monthly", priority: 0.8 },
     { path: "/our-story", frequency: "monthly", priority: 0.7 },
+    { path: "/careers", frequency: "monthly", priority: 0.6 },
     { path: "/blog", frequency: "weekly", priority: 0.75 },
     { path: "/starkville", frequency: "weekly", priority: 0.9 },
     { path: "/privacy", frequency: "monthly", priority: 0.3 },
