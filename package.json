@@ -13,6 +13,7 @@
     "studio:deploy": "sanity deploy",
     "sanity:seed": "node scripts/seed-sanity.mjs",
     "typeform:create": "node scripts/create-typeform.mjs",
+    "typeform:webhook": "node scripts/create-typeform-webhook.mjs",
     "test": "node --experimental-test-module-mocks --import ./tests/helpers/register-alias-loader.mjs --test tests/*.test.mjs",
     "test:production": "node scripts/smoke-production.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"

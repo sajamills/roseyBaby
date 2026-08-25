@@ -9,7 +9,7 @@
 - Complete Bing Webmaster verification now that the domain resolves to Vercel.
 - Connect a real online-ordering provider; the `/order` CTA was changed to "Call to order" in the meantime since ordering isn't wired up yet.
 - Update every Typeform completion/thank-you link to the final production domain at launch.
-- Finish the Resend email integration (DNS verification for `roseybaby.com` is in progress as of 2026-08-25) so Typeform inquiries send a real email notification instead of relying on Typeform's own delivery.
+- [Code complete 2026-08-25, needs manual rollout] Resend email integration for Typeform inquiries: `/api/typeform-webhook` verifies each submission's signature, formats a Q&A summary, and emails it via Resend (see "Typeform inquiry notifications" in `README.md`). Still needed before this actually delivers anything: (1) run `npm run typeform:webhook -- <form_id>` for each of the 3 forms to register the webhook and get a secret, (2) add `TYPEFORM_WEBHOOK_SECRET` and `RESEND_ACCESS_TOKEN` to Vercel (currently only in local `.env.local`), (3) until the `roseybaby.com` sending domain finishes Resend verification, mail sends from the shared `onboarding@resend.dev` address, which only delivers to the Resend account's own verified inbox — not `meetyouonthetracks@gmail.com` yet. None of this was done automatically since it registers a webhook against the live Typeform account and touches Vercel's production env vars.
 - Manually confirm in the Typeform dashboard that all three forms' notification email is set to `meetyouonthetracks@gmail.com`.
 
 ## Content and integrations

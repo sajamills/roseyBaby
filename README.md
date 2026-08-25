@@ -17,12 +17,12 @@ The `roseybaby.com` DNS/domain cutover is not complete. Until it is, canonical U
 
 ## Technology
 
-- Next.js 16.2.12 and React 19.2.8
+- Next.js 16.3.2 and React 19.2.8
 - TypeScript
 - Sanity Studio 6 and `next-sanity`
 - Vercel hosting and weekly cron
 - ESPN/HailState and Starkville community-event ingestion
-- Typeform catering lead forms
+- Typeform catering, crawfish boil, and bartending lead forms, with a webhook that emails a formatted summary via Resend
 - IndexNow notification support
 - Google Analytics support when a GA4 ID is configured
 
@@ -78,6 +78,10 @@ Optional integrations:
 - `UNTAPPD_BUSINESS_API_TOKEN`
 - `OPENAI_API_KEY`
 - `TYPEFORM_ACCESS_TOKEN`
+- `TYPEFORM_WEBHOOK_SECRET` — required for `/api/typeform-webhook` to accept submissions; see "Typeform inquiry notifications" below
+- `RESEND_ACCESS_TOKEN` — required to actually send the notification email
+- `RESEND_FROM_ADDRESS` — optional; defaults to Resend's shared `onboarding@resend.dev` sender, which only delivers to the Resend account's own verified address until a sending domain is verified
+- `INQUIRY_NOTIFICATION_EMAIL` — optional; defaults to `meetyouonthetracks@gmail.com`
 
 ## Content ownership
 
@@ -102,6 +106,18 @@ Authorization: Bearer <SANITY_WEBHOOK_SECRET>
 ```
 
 Use `https://rosey-woad.vercel.app/api/revalidate` before domain cutover. Change it to `https://roseybaby.com/api/revalidate` after DNS points to Vercel and that endpoint returns successfully.
+
+## Typeform inquiry notifications
+
+Typeform's own notification email is unreliable enough that `/api/typeform-webhook` sends a formatted summary of every submission (catering, crawfish boil, and bartending inquiries) to `INQUIRY_NOTIFICATION_EMAIL` (default `meetyouonthetracks@gmail.com`) via Resend, replying-to the submitter's own email when they gave one. It does not replace Typeform's built-in notification — leave that on too as a fallback.
+
+Register the webhook once per form (repeat for the catering, crawfish boil, and bartending form IDs — find each ID in the Typeform dashboard URL or via `GET https://api.typeform.com/forms`):
+
+```bash
+TYPEFORM_ACCESS_TOKEN=... npm run typeform:webhook -- <form_id> https://www.roseybaby.com
+```
+
+The script prints a generated webhook secret the first time it runs for a given form (pass `TYPEFORM_WEBHOOK_SECRET` yourself to reuse one instead) — save it as `TYPEFORM_WEBHOOK_SECRET` in Vercel; Typeform will not show it again. Set `RESEND_ACCESS_TOKEN` in Vercel too, or the webhook will 401 and 500 respectively. Until the `roseybaby.com` sending domain is verified with Resend, email sends from the shared `onboarding@resend.dev` address, which only delivers to the Resend account's own verified inbox — set `RESEND_FROM_ADDRESS` once a domain is verified.
 
 ## Deployment
 

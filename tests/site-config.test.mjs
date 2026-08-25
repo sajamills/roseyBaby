@@ -47,14 +47,17 @@ test("Sanity Studio is mounted at the embedded production path", async () => {
 });
 
 test("cron and webhook endpoints require secrets", async () => {
-  const [cron, webhook] = await Promise.all([
+  const [cron, webhook, typeformWebhook] = await Promise.all([
     read("app/api/cron/sync-sports/route.ts"),
     read("app/api/revalidate/route.ts"),
+    read("app/api/typeform-webhook/route.ts"),
   ]);
   assert.match(cron, /CRON_SECRET/);
   assert.match(cron, /Unauthorized/);
   assert.match(webhook, /SANITY_WEBHOOK_SECRET/);
   assert.match(webhook, /Unauthorized/);
+  assert.match(typeformWebhook, /TYPEFORM_WEBHOOK_SECRET/);
+  assert.match(typeformWebhook, /verifyTypeformSignature/);
 });
 
 test("event sync exposes a freshness health check", async () => {
