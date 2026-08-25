@@ -40,6 +40,7 @@ export type CalendarEvent = {
 };
 
 const postFallbackImages: Record<string, string> = {
+  "happy-hour-at-rosey-baby": "/rosey-originals/gallery/hurricane.jpg",
   "game-day-bar-near-mississippi-state": "/rosey-originals/gallery/beer-taps.jpg",
   "wing-night-at-rosey-baby": "/rosey-originals/wings.jpg",
   "how-to-host-crawfish-boil-starkville": "/rosey-originals/deck.jpg",
@@ -60,6 +61,78 @@ const withPostImage = (post: Post): Post => ({
 });
 
 export const fallbackPosts: Post[] = [
+  {
+    title: "Happy Hour at Rosey Baby: A Different Special Every Day",
+    slug: "happy-hour-at-rosey-baby",
+    category: "Happy hour",
+    publishedAt: "2026-08-25T14:00:00-05:00",
+    excerpt:
+      "Rosey Baby runs a daily drink special all day, dine-in only — $3 martinis, $3 drafts, half-off wine, $3 bottle beer, $3 frozen drinks, and $2 mimosas.",
+    body: [
+      {
+        _key: "hh-1",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hh-1a",
+            text: "Rosey Baby runs a different happy hour special every day it's open — all day, dine-in only, no time window to catch.",
+          },
+        ],
+      },
+      {
+        _key: "hh-2",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "hh-2a", text: "The weekly lineup" }],
+      },
+      {
+        _key: "hh-3",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hh-3a",
+            text: "Monday is $3 martinis. Tuesday is $3 drafts, right alongside 50-cent wing night. Wednesday is half-off wine. Thursday is $3 bottle beer. Friday is $3 frozen drinks. Saturday is $2 mimosas. Rosey Baby is closed Sundays.",
+          },
+        ],
+      },
+      {
+        _key: "hh-4",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "hh-4a", text: "All day, dine-in only" }],
+      },
+      {
+        _key: "hh-5",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hh-5a",
+            text: "These aren't a narrow 4-to-6 window — each day's special runs from open to close, dine-in only, with no other restrictions.",
+          },
+        ],
+      },
+      {
+        _key: "hh-6",
+        _type: "block",
+        style: "h2",
+        children: [{ _key: "hh-6a", text: "Best day to come" }],
+      },
+      {
+        _key: "hh-7",
+        _type: "block",
+        style: "normal",
+        children: [
+          {
+            _key: "hh-7a",
+            text: "Tuesday is the standout — $3 drafts stacked with 50-cent wings makes it one of the best value nights in Starkville. Saturday's $2 mimosas are a solid daytime pick too.",
+          },
+        ],
+      },
+    ],
+  },
   {
     title: "The Best Game Day Bar Near Mississippi State",
     slug: "game-day-bar-near-mississippi-state",

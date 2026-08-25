@@ -42,6 +42,13 @@ const features = [
     href: "/starkville/wing-night-starkville",
     image: "/rosey-originals/wings.jpg",
   },
+  {
+    eyebrow: "Monday–Saturday",
+    title: "Happy Hour",
+    body: "A different drink special every day, all day, dine-in only.",
+    href: "/starkville/happy-hour-starkville",
+    image: "/rosey-originals/gallery/hurricane.jpg",
+  },
 ];
 
 export default function Home() {
