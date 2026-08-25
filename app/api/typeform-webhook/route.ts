@@ -33,6 +33,8 @@ export async function POST(request: NextRequest) {
   );
   const notifyAddress =
     process.env.INQUIRY_NOTIFICATION_EMAIL || "meetyouonthetracks@gmail.com";
+  // Temporary: CC the developer while this integration is still being verified.
+  const notifyCc = process.env.INQUIRY_NOTIFICATION_CC || "samueljamesmiller2021@gmail.com";
 
   const rowsHtml = rows
     .map(
@@ -43,6 +45,7 @@ export async function POST(request: NextRequest) {
 
   await sendEmail({
     to: notifyAddress,
+    cc: notifyCc,
     ...(email ? { replyTo: email } : {}),
     subject: `${title}${fullName ? ` — ${fullName}` : ""}`,
     html: `<h2>${escapeHtml(title)}</h2><table>${rowsHtml}</table>`,

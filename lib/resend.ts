@@ -1,11 +1,13 @@
 export async function sendEmail({
   to,
+  cc,
   replyTo,
   subject,
   html,
   text,
 }: {
   to: string;
+  cc?: string;
   replyTo?: string;
   subject: string;
   html: string;
@@ -23,6 +25,7 @@ export async function sendEmail({
     body: JSON.stringify({
       from: process.env.RESEND_FROM_ADDRESS || "Rosey Baby <onboarding@resend.dev>",
       to: [to],
+      ...(cc ? { cc: [cc] } : {}),
       ...(replyTo ? { reply_to: replyTo } : {}),
       subject,
       html,
