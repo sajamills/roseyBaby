@@ -43,14 +43,20 @@ export async function POST(request: NextRequest) {
     )
     .join("");
 
-  await sendEmail({
-    to: notifyAddress,
-    cc: notifyCc,
-    ...(email ? { replyTo: email } : {}),
-    subject: `${title}${fullName ? ` — ${fullName}` : ""}`,
-    html: `<h2>${escapeHtml(title)}</h2><table>${rowsHtml}</table>`,
-    text: rows.map((row) => `${row.question}: ${row.value}`).join("\n"),
-  });
+  try {
+    await sendEmail({
+      to: notifyAddress,
+      cc: notifyCc,
+      ...(email ? { replyTo: email } : {}),
+      subject: `${title}${fullName ? ` — ${fullName}` : ""}`,
+      html: `<h2>${escapeHtml(title)}</h2><table>${rowsHtml}</table>`,
+      text: rows.map((row) => `${row.question}: ${row.value}`).join("\n"),
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unknown email error";
+    console.error("Typeform inquiry email failed", error);
+    return Response.json({ success: false, error: message }, { status: 500 });
+  }
 
   return Response.json({
     success: true,
