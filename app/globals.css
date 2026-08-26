@@ -156,7 +156,7 @@ blockquote {
 h1 {
   margin: 0;
   font-size: clamp(58px, 7vw, 112px);
-  line-height: 0.82;
+  line-height: 0.95;
   letter-spacing: -0.065em;
   max-width: 850px;
 }
@@ -639,7 +639,7 @@ footer .wordmark {
   background: var(--red-solid);
 }
 .menu-promo-callout {
-  margin: 0 7vw 32px;
+  margin: 0 7vw 48px;
   padding: 40px;
   border: 2px solid var(--gold);
   background: var(--paper);
@@ -663,7 +663,7 @@ footer .wordmark {
 }
 @media (max-width: 700px) {
   .menu-promo-callout {
-    margin: 0 6vw;
+    margin: 0 6vw 32px;
     padding: 30px 24px;
   }
 }
@@ -1675,7 +1675,7 @@ footer {
 .article-page h1 {
   margin: 14px 0 28px;
   font-size: clamp(58px, 8vw, 116px);
-  line-height: 0.88;
+  line-height: 1.02;
   letter-spacing: -0.055em;
 }
 .editorial-hero h1 em,
@@ -1989,7 +1989,9 @@ footer {
 }
 .guide-hero h1,
 .guide-page > header h1 {
+  margin: 14px 0 28px;
   font-size: clamp(58px, 8vw, 112px);
+  line-height: 1.02;
 }
 .guide-hero h1 em {
   color: var(--gold);
