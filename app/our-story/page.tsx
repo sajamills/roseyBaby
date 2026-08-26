@@ -109,7 +109,6 @@ export default function StoryPage() {
             href="https://www.facebook.com/DownHatchStark/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit Down the Hatch on Facebook"
           >
             <Image
               src="/family-stores/down-the-hatch.jpg"
@@ -134,7 +133,6 @@ export default function StoryPage() {
             href="https://www.facebook.com/100082996309644/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit Coconuts on Facebook"
           >
             <Image
               src="/family-stores/coconuts.jpg"
@@ -159,7 +157,6 @@ export default function StoryPage() {
             href="https://www.facebook.com/brewskisstark/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit Brewski’s on Facebook"
           >
             <Image
               src="/family-stores/brewskis.jpg"
@@ -183,7 +180,6 @@ export default function StoryPage() {
             href="https://www.facebook.com/bulldogpackage/"
             target="_blank"
             rel="noreferrer"
-            aria-label="Visit Bulldog Package Store on Facebook"
           >
             <Image
               src="/family-stores/bulldog-package-store.jpg"

@@ -1907,7 +1907,10 @@ footer {
   font-weight: 700;
 }
 .event-row > a {
-  color: var(--red);
+  /* No color here: inherits #f06a62 from the shared link-color rule
+     above. This link also sits on .event-featured's gold-tinted
+     background, where --red measures 3.88:1 (fails WCAG AA); #f06a62
+     passes at 5.08:1 there and 6.32:1 on the plain background. */
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
