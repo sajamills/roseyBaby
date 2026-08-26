@@ -671,6 +671,7 @@ footer .wordmark {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 2px;
+  margin-bottom: 48px;
   background: var(--subtle-border);
 }
 .menu-gallery > div {
