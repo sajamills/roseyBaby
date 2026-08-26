@@ -639,13 +639,10 @@ footer .wordmark {
   background: var(--red-solid);
 }
 .menu-promo-callout {
-  margin: 0 7vw 24px;
+  margin: 0 7vw 32px;
   padding: 40px;
   border: 2px solid var(--gold);
   background: var(--paper);
-}
-.menu-promo-callout:last-of-type {
-  margin-bottom: 0;
 }
 .menu-promo-callout .eyebrow {
   color: var(--gold);
